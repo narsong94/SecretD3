@@ -43,7 +43,7 @@ body, h1, h2, p {
 	right: calc(490px + ((( 100vw - 17px)- 160px)/2));
 	overflow: hidden;
 	clip: rect(0px, 1164px, 962px, 0px);
-	padding-top: 10px;
+	padding-top: 70px;
 }
 
 .title{
@@ -63,7 +63,7 @@ body, h1, h2, p {
 }
 
 .search-list{
-	padding-bottom: 15px;
+	padding-bottom: 10px;
 	min-height : 50px;
 	min-width: 300px;
 	background : #ffffff;

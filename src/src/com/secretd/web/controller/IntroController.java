@@ -13,7 +13,6 @@ public class IntroController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/intro.jsp").forward(request, response); // 이어서 출발
-
+		request.getRequestDispatcher("/WEB-INF/views/intro.jsp").forward(request, response);
 	}
 }

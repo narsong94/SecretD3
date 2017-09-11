@@ -33,8 +33,8 @@
 				<div class="login-form">
 					<input class="text" type="text" placeholder="아이디를 입력하세요"/><p>
 					<input class="text" type="text" placeholder="비밀번호를 입력하세요"/><p class="pad-t">
-					<input class="btn" type="button" src="index" value="로그인"/>
-					<input class="btn pad cr-blue" type="button" src="" value="아이디/비번 찾기"/>
+					<input class="btn" type="button" src="" value="로그인"/>
+					<input class="btn pad cr-blue" type="button" src="guest/id/find" value="아이디/비번 찾기"/>
 				</div>
 			</div>
 			<div class="guest clearfix boder-none">
@@ -43,7 +43,7 @@
 				</div>
 				<div class="btns">
 					<input class="cr-orange" type="button" src="index" value="시작하기"/><p class="pad-t">
-					<input class="cr-green" type="button" src="join" value="회원가입"/>
+					<input class="cr-green" type="button" src="guest/join" value="회원가입"/>
 				</div>
 				</div>
 			</div>

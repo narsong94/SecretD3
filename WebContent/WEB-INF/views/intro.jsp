@@ -27,7 +27,7 @@
 		</div>
 		<div class="box">
 		<div class="text">
-			<p>스스로의 건강을 확인하고 궁금했던 질병에 대해 알아가며<p> 고민을 다른사람과 나누는 공간<p> Secret D에 당신을 환영합니다.</p>
+			<p>스스로의 건강을 확인하고<p> 궁금했던 질병에 대해 알아가며<p> 고민을 다른사람과 나누는 공간<p> Secret D에 당신을 환영합니다.</p>
 		</div>
 			<div class="btn-enter">
 				<a href="login">ENTER</a>

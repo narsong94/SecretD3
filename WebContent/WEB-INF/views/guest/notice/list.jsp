@@ -8,27 +8,23 @@
 <meta charset="UTF-8"">
 <title>공지사항</title>
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/headfoot.css">
 <link rel="stylesheet" type="text/css" href="../../css/cscenter/notice.css">
 </head>
 
 <jsp:include page="../inc/header.jsp" />
+	
+<main class="main">
 
-<div class="space"></div>
-
-<main id="body" class=" clearfix">
-<div class="content-container">
-	<div id="notice-title" class="title">
-		<p>CS CENTER - 공지사항</p>
+	<div class="title">
+		<img src="../../images/bg-cscenter.jpg"/>
 	</div>
+<div class="nt-container">
 	<h2 class="hidden">메인 화면</h2>
 
-	<jsp:include page="../inc/aside.jsp" />
-
-	<div class="main pad-bt">
-		<h2>공지사항</h2>
+		<h2 class="hidden">공지사항</h2>
 			<div class="hidden">
-				<h3>공지사항 검색 폼</h3>
+				<h3 class="hidden">공지사항 검색 폼</h3>
 				<form method="get" class="search">
 					<input type="text" name="title" placeholder="검색어 입력"/> <input
 						type="submit" value="검색"/>
@@ -58,7 +54,7 @@
 				<c:set var="lastNum"
 					value="${fn:substringBefore((count/10)==0? count/10: count/10+1,'.')}" />
 				<div>
-					<a href="?p=1">이전</a>
+					<a href="?p=1">◀이전</a>
 				</div>
 				<ul>
 					<c:forEach var="i" begin="0" end="4">
@@ -78,7 +74,7 @@
 					<%-- <c:if test="${lastNum>= startNum+5}">
 						<a href="?p=${startNum+5}">다음</a>
 					</c:if> --%>
-					<a href="?p=${startNum+5}">다음</a>
+					<a href="?p=${startNum+5}">다음▶</a>
 				</div>
 			</div>
 	</div>

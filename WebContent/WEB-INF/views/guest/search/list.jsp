@@ -15,10 +15,9 @@
 	
 	<main class="main">
 		<div class="title">
-			<p>질병 검색</p>
+			<img src="../../images/bg-search.png"/>
 		</div>
 	<div class="sr-container">
-
 		<div>
 			<div class="search-list">
 				<h1 class="hidden">선택</h1>
