@@ -8,7 +8,7 @@
 		<div class="div-content">
 			<h1 class="hidden">메인헤더</h1>
 			<h1>
-				<img id="logo" src="" alt="SecretD" />
+				<img id="logo" src="${page}/images/logo.png" alt="SecretD" />
 			</h1>
 		</div>
 		<div class="div-content">

@@ -7,16 +7,17 @@
 <title>Disease search list</title>
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../../css/main/search.css"> 
+<link rel="stylesheet" type="text/css" href="../../css/headfoot.css"> 
 </head>
 <body>
 
 	<jsp:include page="../inc/header.jsp" />
 	
 	<main class="main">
-	<div class="sr-container">
 		<div class="title">
 			<p>질병 검색</p>
 		</div>
+	<div class="sr-container">
 
 		<div>
 			<div class="search-list">
@@ -29,7 +30,7 @@
 					<li><a href="">기타</a></li>
 				</ul>
 			</div>
-			<div id="search-form">
+			<div class="search-form">
 			<h1 class="hidden">강좌검색 폼</h1>
 			<form>
 				<select name="category" class="ctg">

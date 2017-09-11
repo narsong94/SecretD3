@@ -116,7 +116,6 @@ body, h1, h2 {
 	right: calc(490px + ((( 100vw - 17px)- 160px)/2));
 	overflow: hidden;
 	clip: rect(0px, 1164px, 962px, 0px);
-		padding-top: 80px;
 }
 
 .first {
@@ -145,20 +144,20 @@ body, h1, h2 {
 
 .first .text, .second .text, .third .text {
 	position: absolute;
+	text-align: center;
 	top: 155px;
-	/* in conjunction with left property, decides the text position */
-	left: 170px;
+	left: 100px;
 	width: 300px;
 	height: 300px;
 	color: white;
-	font: normal normal normal 40px/1.4em cinzel, serif;
+	font: normal normal normal 40px/1.4em cinzel, serif;;
 	font-size: 30px;
 }
 
 .first .text a, .second .text a, .third .text a {
 	top: 250px;
 	/* in conjunction with left property, decides the text position */
-	left: 280px;
+	left: 200px;
 	height: 40px;
 	color: white;
 	font: normal normal normal 40px/1.4em cinzel, serif;
@@ -170,13 +169,17 @@ body, h1, h2 {
 	height: 40px;
 }
 
+.head-pad{
+	margin-top: 10px;
+}
+
 .pad-r {
 	padding-right: 15px;
 }
 
 .pad-t {
 	padding-top: 25px;
-	padding-left: 40px;
+	padding-left: 0px;
 }
 
 .first .text a:hover, .second .text a:hover, .third .text a:hover {

@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/guest/login")
+@WebServlet("/login")
 public class LoginController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/guest/login.jsp").forward(request, response); // 이어서 출발
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response); // 이어서 출발
 
 	}
 }

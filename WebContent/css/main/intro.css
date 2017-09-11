@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+}
+
+.body{
+	position: relative;
+	width: 100%;
+	height: 974px;
+}
+
+.box{
+	position: absolute;
+	width: 700px;
+	height: 460px;
+	background: #fff2e1;
+	opacity: 0.9;
+	border: 2px solid #000;
+	left: 595px;
+	top: 237px;
+}
+
+.text{
+	padding: 60px 0px;
+	padding-bottom: 70px;
+	text-align: center;
+	font-size: 23px;
+	font: normal normal normal cinzel, serif;
+}
+
+.btn-enter{
+	padding-left: 280px;
+}
+
+.btn-enter a{
+	top: 100px;
+	font: normal normal normal 40px/1.4em cinzel, serif;
+	border: 1px solid #000000;
+	cursor: pointer;
+	font-size: 25px;
+	text-decoration: none;
+	padding: 8px 18px;
+	height: 40px;
+	width: 50px;
+	color: black;
+}
+
+.btn-enter a:hover{
+	border: 1px solid #ff6060;
+	color: white;
+	background: #ff6060;
+	opacity: 1;
+}
+
+.intro-wrap {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bgwrap {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.intro-wrap>.bgwrap>div {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	text-align: center;
+}
+
+.intro-wrap>.bgwrap>div>img {
+	height: 100%;
+	width : 100%;
+	max-width: inherit;
+}

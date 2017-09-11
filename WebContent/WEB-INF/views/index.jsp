@@ -13,8 +13,8 @@
 	<div class="head-container">
 		<div class="div-content">
 			<h1 class="hidden">메인헤더</h1>
-			<h1>
-				<img id="logo" src="" alt="SecretD" />
+			<h1 class="head-pad">
+				<img id="logo" src="images/logo.png" alt="SecretD" />
 			</h1>
 		</div>
 		<div class="div-content">
@@ -42,7 +42,7 @@
 			<div class="first">
 				<img src="images/first.png" />
 				<div class="text">
-					<h2>질병검색</h2>
+					<h2>Search</h2>
 					<div class="pad-t">
 						<a href="guest/search/list">view</a>
 					</div>
@@ -53,7 +53,7 @@
 			<div class="second">
 				<img src="images/second.png" />
 				<div class="text">
-					<h2>자가진단</h2>
+					<h2>Survey</h2>
 					<div class="pad-t">
 						<a href="guest/survey/index">view</a>
 					</div>
@@ -64,7 +64,7 @@
 			<div class="third">
 				<img src="images/third.png" />
 				<div class="text">
-					<h2>고민상담</h2>
+					<h2>Counseling</h2>
 					<div class="pad-t">
 						<a href="guest/counseling/list">view</a>
 					</div>
