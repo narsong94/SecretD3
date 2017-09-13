@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+
+body, h1, h2, p {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearfix::after {
+	content: "";
+	clear: left;
+	display: block;
+	clear: both;
+	display: block;
+}
+
+
+.main {
+	min-height: 550px;
+	width: 100%;
+	background: white;
+}
+
+.nt-container {
+	z-index: 1;
+	min-height: inherit;
+	height: 560px;
+	width: 1400px;
+	margin: auto;
+	background: inherit;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	top: 0px;
+	pointer-events: auto;
+	bottom: 0px;
+	left: calc(490px - ((( 100vw - 17px)- 160px)/2));
+	right: calc(490px + ((( 100vw - 17px)- 160px)/2));
+	overflow: hidden;
+	clip: rect(0px, 1164px, 962px, 0px);
+	padding-top: 90px;
+}
+
+.title{
+	width:100%;
+	height: 180px;
+	font-size: 30px;
+	text-align: center;
+	color: #004080;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-weight: bold;
+	padding-top: 70px; 
+}
+
+/* -------------------------------------------------------------------------------- */
+
+
+.main h3{
+	padding-left: 13px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.w321{
+	width:250px;
+}
+.w850{
+	width:670px;
+}
+
+.h45{
+	height: 40px;
+}
+.h104{
+	height: 140px;
+}
+
+.none-border{
+	border: 0px;
+}
+
+
+.table {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	border-top: 1px solid #ccc;
+	border-left: 3px solid #369;
+	margin-left: 19px;
+	margin-top: 45px;
+	margin-bottom: 27px;
+}
+
+.table th {
+	min-width: 120px;
+	padding: 10px;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	color: #153d73;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.table td {
+	min-width: 100px;
+	padding: 10px;
+	text-align: left;
+	vertical-align: middle;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.btn {
+	display: inline-block;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	padding: 8px 0px;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 18px;
+	width: 420px;
+}
+
+.btn-default {
+	background: #369;
+}
+
+.btn-padding {
+	padding-left: 219px;
+}
+
+.btn-default:hover {
+	text-decoration: none;
+	background: #ff8080;
+	border-color: #ff8080;
+}

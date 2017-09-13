@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../../css/main/survey.css">
+<link rel="stylesheet" type="text/css" href="../../css/headfoot.css">
 </head>
 <body>
 
-	<jsp:include page="../inc/header.jsp" />
+	<jsp:include page="../../inc/header.jsp" />
 
 	<main class="main">
 	<div class="sv-container clearfix">

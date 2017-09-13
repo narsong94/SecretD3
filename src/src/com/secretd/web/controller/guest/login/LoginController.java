@@ -8,11 +8,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import src.com.secretd.web.dao.MemberDao;
+import src.com.secretd.web.dao.jdbc.JdbcMemberDao;
+import src.com.secretd.web.entity.Member;
+
 @WebServlet("/login")
 public class LoginController extends HttpServlet{
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response); // 이어서 출발
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
 
+		MemberDao memberDao = new JdbcMemberDao();
+
+		Member member = memberDao.get(id);
+
+		if (member == null)
+			response.sendRedirect("login?error1");
+		else if (!member.getPwd().equals(pwd))
+			response.sendRedirect("login?error2");
+		else {
+			request.getSession().setAttribute("id", id);
+			String url = request.getParameter("returnURL");
+			if(url != null)			
+				response.sendRedirect(url);
+			else
+				response.sendRedirect("index");//로그인 성공했을때 이동페이지
+		}
 	}
 }

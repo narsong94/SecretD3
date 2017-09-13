@@ -11,17 +11,14 @@
 <link rel="stylesheet" type="text/css" href="../../css/headfoot.css">
 <link rel="stylesheet" type="text/css" href="../../css/cscenter/notice.css">
 </head>
-
-<jsp:include page="../inc/header.jsp" />
+<jsp:include page="../../inc/header.jsp" />
 	
 <main class="main">
-
 	<div class="title">
 		<img src="../../images/bg-cscenter.jpg"/>
 	</div>
 <div class="nt-container">
 	<h2 class="hidden">메인 화면</h2>
-
 		<h2 class="hidden">공지사항</h2>
 			<div class="hidden">
 				<h3 class="hidden">공지사항 검색 폼</h3>
@@ -71,10 +68,9 @@
 					</c:forEach>
 				</ul>
 				<div>
-					<%-- <c:if test="${lastNum>= startNum+5}">
-						<a href="?p=${startNum+5}">다음</a>
-					</c:if> --%>
-					<a href="?p=${startNum+5}">다음▶</a>
+					<c:if test="${lastNum>= startNum+5}">
+						<a href="?p=${startNum+5}">다음▶</a>
+					</c:if> 
 				</div>
 			</div>
 	</div>

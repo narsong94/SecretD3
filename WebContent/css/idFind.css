@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+
+body, h1, h2, p {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearfix::after {
+	content: "";
+	clear: left;
+	display: block;
+	clear: both;
+	display: block;
+}
+
+
+.main {
+	min-height: 550px;
+	width: 100%;
+	background: white;
+}
+
+.nt-container {
+	z-index: 1;
+	min-height: inherit;
+	height: 560px;
+	width: 1400px;
+	margin: auto;
+	background: inherit;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	top: 0px;
+	pointer-events: auto;
+	bottom: 0px;
+	left: calc(490px - ((( 100vw - 17px)- 160px)/2));
+	right: calc(490px + ((( 100vw - 17px)- 160px)/2));
+	overflow: hidden;
+	clip: rect(0px, 1164px, 962px, 0px);
+	padding-top: 100px;
+}
+
+.title{
+	width:100%;
+	height: 180px;
+	font-size: 30px;
+	text-align: center;
+	color: #004080;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-weight: bold;
+	padding-top: 70px; 
+}
+.title * {
+	color: white;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+.form {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.find{
+	padding: 10px;
+	background: white;
+    color: black;
+    text-align: center;
+    min-width: 600px;
+    min-height: 300px;
+    border: 3px solid #e9e9e9;
+}
+
+.find-next {
+	padding: 10px;
+	padding-left: 190px;
+	cursor: pointer; 
+	border : 1px solid transparent;
+	border-radius: 15px;
+	border: 1px solid transparent;
+}
+
+.find-next-info {
+	padding: 0px 15px;
+	padding-top: 10x;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 15px;
+}
+.find-next-info2 {
+	padding: 0px 145px;
+	padding-top: 10x;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 15px;
+	text-align: center;
+}
+
+#id-find-pw-find {
+	width: inherit;
+	height: 30px;
+	position: relative;
+	padding-top: 10px;
+	background: #a8c4e6;
+	padding-left: 510px;
+	/* border-bottom: 3px solid #008000; */
+}
+
+#id-find-pw-find a {
+	padding-right: 10px;
+	font: 맑은 고딕;
+	font-size: 15px;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+#id-find-pw-find :hover {
+	color: #ff8000;
+}
+
+#id-find-form {
+	min-height: 600px;
+	min-width: 600px;
+	border-radius: 4px;
+	position: absolute;
+	left: 32%;
+	padding-top: 7%;
+	padding-left: 2%;
+}
+
+.phone-text, .email-text {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	position: relative;
+	left: 5%;
+	float: left;
+	padding-left: 60px;
+}
+
+.phone-text .id-find-phone-label {
+	/* position: relative;
+	left: 10px; */
+	text-align: left;
+	font-size: 15px;
+	font-style: bold;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	margin-right: 5px;
+	float: left;
+	line-height: 250%
+}
+
+.id-find-form{
+	padding: 10px 0px;
+}
+
+.id-find-phone-input, .id-find-email-input {
+	width: 200px;
+	float: left;
+}
+
+.phone-text  input[type="text"], .email-text  input[type="text"] {
+	width: 300px;
+	height: 25px;
+	border: 2px solid #b4b1b1;
+	line-height: 200%;
+	margin: 5px;
+	padding-left: 5px;
+}
+
+.asr {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.whatfind {
+	padding-top: 10px;
+}
+
+.email-text .id-find-email-label {
+	/* position: relative;
+	left: 10px; */
+	text-align: left;
+	font-size: 15px;
+	font-style: bold;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	margin-right: 5px;
+	float: left;
+	line-height: 250%
+}
+
+
+/* -------비밀번호 찾기--------- */
+#pw-find-form {
+	min-height: 500px;
+	min-width: 600px;
+	width: 670px;
+	background: #f2f2f2;
+	border-radius: 4px;
+	position: absolute;
+	left: 34%;
+	padding-top: 3%;
+	padding-left: 2%;
+}
+
+#pw-find-form h2 {
+	padding-top: 0px;
+	padding-bottom: 4px;
+	width: 300px;
+	border-bottom: 3px solid red;
+	margin-bottom: 5px;
+}
+
+#pw-find-form h3 {
+	margin-bottom: 10px;
+}
+
+#pw-find-form input {
+	float: left;
+	padding-right: 5px;
+	margin-right: 5px;
+}
+
+.pw-find-form  input[type="text"] {
+	width: 300px;
+	height: 25px;
+	border: 2px solid #b4b1b1;
+	line-height: 200%;
+	margin: 5px;
+}
+
+.pw-find-form  input[type="submit"] {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #b4b1b1;
+	background: none;
+	line-height: 200%;
+	margin: 3px;
+	cursor: pointer;
+}
+
+.id-input {
+	width: 50px;
+	height: 20px;
+}
+
+/* ------------아이디 찾은 목록----- */
+.pw-find-info {
+	width: inherit-30px;
+	height: 150px;
+	border: 3px solid #e9e9e9;
+	padding-top: 15px;
+	padding-left: 30px;
+	margin-bottom: 10px;
+}
+
+.id-find-list {
+	margin-top: 50px;
+	padding-left: 50px;
+	font-size: 20px;
+	font: 맑은 고딕;
+}
+
+.pw-find-info input {
+	margin-top: 50px;
+	padding-left: 50px;
+	font: 맑은 고딕;
+}
+
+.pw-find-info label {
+	padding-left: 15px;
+	font: 맑은 고딕;
+}
+
+.btn {
+	display: inline-block;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	background-image: none;
+	border: 1px solid #808080;
+	padding: 6px 100px;
+	color: #454545;
+	font-weight: bold;
+	background: white;
+}
+
+.btn:hover {
+	background: #004080;
+	border: 1px solid #004080;
+	color: white;
+}

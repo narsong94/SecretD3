@@ -8,25 +8,17 @@
 <meta charset="UTF-8"">
 <title>공지사항</title>
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/headfoot.css">
 <link rel="stylesheet" type="text/css"
 	href="../../css/cscenter/notice.css">
 </head>
-
-<jsp:include page="../inc/header.jsp" />
-
+<jsp:include page="../../inc/header.jsp" />
 <div class="space"></div>
-
-<main id="body" class=" clearfix">
-<div class="content-container">
-	<div id="notice-title" class="title">
-		<p>CS CENTER - 공지사항</p>
-	</div>
-	<h2 class="hidden">메인 화면</h2>
-
-	<jsp:include page="../inc/aside.jsp" />
-
-	<div class="main">
+<main class="main">
+<div class="title">
+	<img src="../../images/bg-cscenter.jpg" />
+</div>
+<div class="nt-container">
 		<table class="dt-table">
 			<tr>
 				<th>제목</th>
@@ -53,14 +45,9 @@
 			<a href="list" class="btn btn-default">목록</a> <a
 				href="edit?id=${detail.id }" class="btn btn-default">수정</a> <a
 				href="delete?id=${detail.id }" class="btn btn-default">삭제</a>
-
 		</div>
 	</div>
-</div>
-
 </main>
-
 <jsp:include page="../../inc/footer.jsp" />
-
 </body>
 </html>

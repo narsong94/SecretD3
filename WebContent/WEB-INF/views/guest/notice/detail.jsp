@@ -12,16 +12,13 @@
 <link rel="stylesheet" type="text/css"
 	href="../../css/cscenter/notice.css">
 </head>
-
-<jsp:include page="../inc/header.jsp" />
-
+<jsp:include page="../../inc/header.jsp" />
 <div class="space"></div>
-
 <main class="main">
 <div class="title">
-	<img src="../../images/bg-search.png" />
+	<img src="../../images/bg-cscenter.jpg" />
 </div>
-<div class="sr-container">
+<div class="nt-container">
 	<table class="dt-table">
 		<tr>
 			<th>제목</th>
@@ -48,10 +45,7 @@
 		<a href="list" class="btn btn-default">목록</a>
 	</div>
 </div>
-
 </main>
-
 <jsp:include page="../../inc/footer.jsp" />
-
 </body>
 </html>

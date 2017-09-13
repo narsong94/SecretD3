@@ -6,51 +6,51 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-<link rel="stylesheet" type="text/css" href="../css/id/join.css">
+<link rel="stylesheet" type="text/css" href="../css/headfoot.css">
+<link rel="stylesheet" type="text/css" href="../css/join.css">
 </head>
 <body>
 
-<%-- 	<jsp:include page="inc/header.jsp" /> --%>
+	<jsp:include page="../inc/header.jsp" />
 
-	<div class="space"></div>
+	<main class="main">
+	<div class="sv-container clearfix">
+		<h2 class="hidden">메인</h2>
+		<div class="epl">
+			<h1 class="join-logo">회원가입</h1>
+			<form action="join" method="post">
+				<div class="join-form">
+					<p>아이디</p>
+					<input name="id" type="text" />
 
-	<main id="body" class="clearfix">
-	<div class="content-container">
-		<h1 class="join-logo">회원가입</h1>
-		<div class="join-form">
-			<form method="post">
-				<p>아이디</p>
-				<input type="text" />
+					<p>비밀번호</p>
+					<input name="pwds" type="password" />
 
-				<p>비밀번호</p>
-				<input type="password" />
+					<p>비밀번호 재입력</p>
+					<input name="pwds" type="password" />
 
-				<p>비밀번호 재입력</p>
-				<input type="password" />
+					<p>이름</p>
+					<input name="name" type="text" />
 
-				<p>이름</p>
-				<input type="text" />
+					<p>이메일</p>
+					<input name="email" type="text" />
 
-				<p>이메일(선택)</p>
-				<input type="text" />
-
-				<p>닉네임</p>
-				<input type="text" /><br />
-				<!-- <div class="btn-move">
-					<input type="submit" class="btn btn-default btn-pad" value="가입하기" />
-				</div> -->
+					<p>닉네임</p>
+					<input name="nickname" type="text" /><br />
+				</div>
+				<div class="join-right">
+					<div class="btn-move">
+						<input type="submit" name="btn" class="btn" value="회원 가입" />
+					</div>
+				</div>
 			</form>
 		</div>
-		<div class="join-right">
-			<a><img class="icon" src="../images/joinLogo.png" /></a><br />
-			<div class="btn-move">
-			<input type="submit" class="btn btn-default btn-pad" />
-			</div>
+		<div class="img">
+			<img class="bt-survey" src="../images/bg-join.png" />
 		</div>
 	</div>
 	</main>
 
-	<%-- <jsp:include page="../inc/footer.jsp" /> --%>
+	<jsp:include page="../inc/footer.jsp" />
 </body>
 </html>

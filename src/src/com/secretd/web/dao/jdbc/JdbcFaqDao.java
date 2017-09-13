@@ -11,7 +11,6 @@ import java.util.List;
 
 import src.com.secretd.web.dao.FaqDao;
 import src.com.secretd.web.entity.Faq;
-import src.com.secretd.web.entity.NoticeView;
 
 public class JdbcFaqDao implements FaqDao {
 
@@ -19,12 +18,11 @@ public class JdbcFaqDao implements FaqDao {
 	public List<Faq> get() {
 		List<Faq> list = null;
 		String sql = "SELECT * FROM Faq";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 
-		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 
@@ -36,7 +34,7 @@ public class JdbcFaqDao implements FaqDao {
 				n.setDate(rs.getString("date"));
 				n.setTitle(rs.getString("title"));
 				n.setContent(rs.getString("content"));
-				n.setManagerId(rs.getString("managerId"));
+				n.setManagerId(rs.getString("manager_id"));
 				n.setAnswer(rs.getString("answer"));
 
 				list.add(n);
@@ -51,6 +49,40 @@ public class JdbcFaqDao implements FaqDao {
 		}
 
 		return list;
+	}
+
+	@Override
+	public Faq get(String number) {
+		Faq n = null;
+		String sql = "SELECT * FROM Faq WHERE number = ?";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
+			// ?‹¤?–‰
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, number);
+			ResultSet rs = st.executeQuery();
+
+			if (rs.next()) {
+				n = new Faq();
+				n.setNumber(rs.getString("number"));
+				n.setDate(rs.getString("date"));
+				n.setTitle(rs.getString("title"));
+				n.setContent(rs.getString("content"));
+				n.setManagerId(rs.getString("manager_id"));
+				n.setAnswer(rs.getString("answer"));
+			}
+			rs.close();
+			st.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return n;
 	}
 
 }

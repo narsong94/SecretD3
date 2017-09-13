@@ -10,15 +10,13 @@
 <link rel="stylesheet" type="text/css" href="../../css/mypage/counseling.css">
 </head>
 <body>
-	<jsp:include page="../inc/header.jsp" />
+	<jsp:include page="../../inc/header.jsp" />
 
 	<main id="body" class="clearfix">
 	<div class="content-container">
 		<div id="notice-title" class="title">
 			<p>My Page</p>
 		</div>
-
-		<jsp:include page="inc/aside.jsp" />
 
 		<div class="main">
 			<h3>익명 상담</h3>

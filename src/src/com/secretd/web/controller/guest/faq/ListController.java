@@ -21,17 +21,11 @@ public class ListController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String  _query = request.getParameter("number"); 
-		String query = ""; 
-		if(_query != null && !_query.equals(""))
-			query=_query;
-
 		FaqDao faqDao = new JdbcFaqDao();
 
-		List<Faq> list = null;
-		list = faqDao.get();
+		List<Faq> list = faqDao.get();
 		
-		request.setAttribute("list", list);
+		request.setAttribute("faqList", list);
 		
 		request.getRequestDispatcher("/WEB-INF/views/guest/faq/list.jsp").forward(request, response);
 	}

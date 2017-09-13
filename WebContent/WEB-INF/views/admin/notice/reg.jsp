@@ -8,45 +8,44 @@
 <meta charset="UTF-8">
 <title>관리자 글등록</title>
 <link href="../../css/reset.css" type="text/css" rel="stylesheet" />
-<link href="../../css/style.css" type="text/css" rel="stylesheet" />
-<link href="../../css/cscenter/notice.css" type="text/css" rel="stylesheet" />
+<link href="../../css/headfoot.css" type="text/css" rel="stylesheet" />
+<link href="../../css/cscenter/notice.css" type="text/css"
+	rel="stylesheet" />
 </head>
 <body>
 	<!-- header 부분 -->
-	<jsp:include page="../inc/header.jsp" />
+	<jsp:include page="../../inc/header.jsp" />
 	<div class="space"></div>
-	<div id="body" class="clearfix">
-		<div class="content-container">
-			<div id="notice-title" class="title">
-				<p>CS CENTER - 공지사항</p>
-			</div>
-			<!-- aside부분 -->
-			<jsp:include page="../inc/aside.jsp" />
-			<main id="main">
-			<form method="post">
-				<table class="table">
-					<tr>
-						<th>제목</th>
-						<td colspan="3"><input name="title" value="${detail.title}"></td>
-					</tr>
-					<tr>
-						<th>첨부파일</th>
-						<td colspan="3"></td>
-					</tr>
-					<tr>
-						<td colspan="4"><textarea name="content"></textarea></td>
-				</table>
-				<div>
-					<input type="submit" class="btn btn-default" value="등록" /> <a
-						href="list" class="btn btn-default">취소</a>
-				</div>
-			</form>
-			</main>
-		</div>
+	<main class="main">
+	<div class="title">
+		<img src="../../images/bg-cscenter.jpg" />
 	</div>
-	<footer id="footer">
-		<div class="content-container"></div>
-	</footer>
+	<div class="nt-container">
+		<form method="post">
+			<table class="table">
+			<tr>
+				<th scope="row">제목</th>
+				<td><input class="w321 h45 none-border" type="text"
+					name="title" /></td>
+			</tr>
+			<tr>
+				<th scope="row">첨부파일</th>
+				<td class="w850 h45" colspan="3">파일</td>
+			</tr>
+			<tr>
+				<th scope="row">내용</th>
+				<td colspan="3"><textarea class="w850 h104 none-border"
+						rows="5" cols="100" name="content"></textarea></td>
+			</tr>
+		</table>
+		<div class="btn-pad4">
+			<input id="insert-button" type="submit" value="등록" class="btn btn-default" />
+		</div>
+		</form>
+	</div>
+	</div>
+	</main>
 
+<jsp:include page="../../inc/footer.jsp" />
 </body>
 </html>

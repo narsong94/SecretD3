@@ -15,13 +15,13 @@
 		<div class="intro-wrap">
 			<div class="bgwrap">
 				<div style="display: block;">
-					<img alt="image_1" src="images/bg_intro_1.jpg" />
+					<img alt="image_1" src="images/bg_intro_3.jpg" />
 				</div>
 				<div style="display: none;">
 					<img alt="image_2" src="images/bg_intro_2.jpg" />
 				</div>
 				<div style="display: none;">
-					<img alt="image_3" src="images/bg_intro_3.jpg" />
+					<img alt="image_3" src="images/bg_intro_1.jpg" />
 				</div>
 			</div>
 		</div>
@@ -40,11 +40,9 @@
 			var nDuration = 4500; // 이미지를 변경할 시간 (3000 = 3초)
 			var bAuto = true; // 자동으로 변경할 지 여부
 			var nIndex = 0; // 변경할 이미지의 Index
-
 			if (bAuto == true) {
 				setInterval(autoSlide, nDuration); // Javascript setInterval 함수 호출
 			}
-
 			function autoSlide() {
 				/* 3초마다 이 함수에 들어오게 됨 */
 				// % 연산은 나누기를 한 후 나머지 값을 가져오는 연산입니다.

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+
+body, h1, h2, p {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.clearfix::after {
+	content: "";
+	clear: left;
+	display: block;
+	clear: both;
+	display: block;
+}
+
+
+.main {
+	min-height: 550px;
+	width: 100%;
+	background: white;
+}
+
+.nt-container {
+	z-index: 1;
+	min-height: inherit;
+	width: 1400px;
+	margin: auto;
+	background: inherit;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	top: 0px;
+	pointer-events: auto;
+	bottom: 0px;
+	left: calc(490px - ((( 100vw - 17px)- 160px)/2));
+	right: calc(490px + ((( 100vw - 17px)- 160px)/2));
+	overflow: hidden;
+	clip: rect(0px, 1164px, 962px, 0px);
+	padding-top: 90px;
+}
+
+.title{
+	width:100%;
+	height: 180px;
+	font-size: 30px;
+	text-align: center;
+	color: #004080;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-weight: bold;
+	padding-top: 70px; 
+	padding-left: 20px;
+}
+
+
+/* --------------------------------------------------------------- */
+
+.tap {
+	width: 810px;
+	padding-left: 11px;
+	padding-top: 25px;
+}
+
+.toggle_button {
+	padding: 6px;
+	cursor: pointer;
+	display: block;
+	background: #eee;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #595959;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-size: 18px;
+	color: black;
+	border-radius: 4px;
+}
+
+#toggle_button, #toggle_contents {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+#toggle_button:checked+#toggle_contents {
+	height: auto;
+	position: relative;
+	border: 1px solid #ccc;
+	border-top: 0;
+	padding: 10px;
+}
+
+/* ---------------------------------------------------------------- */
+
+.toggle_button1,
+.toggle_button2,
+.toggle_button3,
+.toggle_button4,
+.toggle_button5,
+.toggle_button6,
+.toggle_button7,
+.toggle_button8,
+.toggle_button9,
+.toggle_button10 {
+	padding: 10px;
+	cursor: pointer;
+	display: block;
+	background: #004080;
+	opacity: 0.6;
+	text-align: center;
+	vertical-align: middle;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+	font-family: 맑은 고딕, 고딕, sans-selif;
+	font-size: 18px;
+	color: white;
+	border-radius: 4px;
+}
+
+.toggle_button1:hover,
+.toggle_button2:hover,
+.toggle_button3:hover,
+.toggle_button4:hover,
+.toggle_button5:hover,
+.toggle_button6:hover,
+.toggle_button7:hover,
+.toggle_button8:hover,
+.toggle_button9:hover,
+.toggle_button10:hover{
+	background: #cc450b;
+	color: #ffffff;
+}
+
+#toggle_button1, #toggle_contents1,
+#toggle_button2, #toggle_contents2,
+#toggle_button3, #toggle_contents3,
+#toggle_button4, #toggle_contents4,
+#toggle_button5, #toggle_contents5,
+#toggle_button6, #toggle_contents6,
+#toggle_button7, #toggle_contents7,
+#toggle_button8, #toggle_contents8,
+#toggle_button9, #toggle_contents9,
+#toggle_button10, #toggle_contents10 {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+#toggle_button1:checked+#toggle_contents1,
+#toggle_button2:checked+#toggle_contents2,
+#toggle_button3:checked+#toggle_contents3,
+#toggle_button4:checked+#toggle_contents4,
+#toggle_button5:checked+#toggle_contents5,
+#toggle_button6:checked+#toggle_contents6,
+#toggle_button7:checked+#toggle_contents7,
+#toggle_button8:checked+#toggle_contents8,
+#toggle_button9:checked+#toggle_contents9,
+#toggle_button10:checked+#toggle_contents10 {
+	height: auto;
+	position: relative;
+	border: 1px solid #ccc;
+	border-top: 0;
+	padding: 10px;
+}
+
+.pad{
+	padding-bottom: 1.3px;
+}

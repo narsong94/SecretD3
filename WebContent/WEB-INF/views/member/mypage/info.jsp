@@ -11,7 +11,7 @@
 <body>
 
 
-<jsp:include page="../inc/header.jsp"/>
+<jsp:include page="../../inc/header.jsp"/>
 
 <main id="body" class="clearfix">
 <div class="content-container">
@@ -19,7 +19,6 @@
 		<p>My Page</p>
 	</div>
 	
-	<jsp:include page="inc/aside.jsp"/>
 	
 	<h2 class="hidden">메인 화면</h2>	
 	<div id="notice-main" class="main">
