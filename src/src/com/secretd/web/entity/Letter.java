@@ -1,8 +1,10 @@
 package src.com.secretd.web.entity;
 
+import java.sql.Date;
+
 public class Letter {
-	private String number;
-	private String date;
+	private int number;
+	private Date date;
 	private String title;
 	private String content;
 	private String writerId;
@@ -11,7 +13,7 @@ public class Letter {
 	public Letter() {
 		// TODO Auto-generated constructor stub
 	}
-	public Letter(String number, String date, String title, String content, String writerId, String check) {
+	public Letter(int number, Date date, String title, String content, String writerId, String check) {
 		super();
 		this.number = number;
 		this.date = date;
@@ -20,16 +22,16 @@ public class Letter {
 		this.writerId = writerId;
 		this.check = check;
 	}
-	public String getNumber() {
+	public int getNumber() {
 		return number;
 	}
-	public void setNumber(String number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public String getTitle() {

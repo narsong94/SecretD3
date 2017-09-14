@@ -34,7 +34,7 @@
 					<div class="login-form">
 						<input class="text" name="id" type="text" placeholder="아이디를 입력하세요" />
 						<p>
-							<input class="text" name="pwd" type="text"
+							<input class="text" name="pwd" type="password"
 								placeholder="비밀번호를 입력하세요" />
 						<p class="pad-t">
 							<input class="btn" type="submit" name="btn" value="로그인" /> <input
@@ -60,7 +60,7 @@
 	<script type="text/javascript">
 		var $imgList = $('.bgwrap>div'); // bgwrap div 안에 있는 div 자식들을 가져옴
 		var nImgCount = $imgList.children().length; // 위에서 가져온 div 자식들의 개수
-		var nDuration = 4500; // 이미지를 변경할 시간 (3000 = 3초)
+		var nDuration = 3500; // 이미지를 변경할 시간 (3000 = 3초)
 		var bAuto = true; // 자동으로 변경할 지 여부
 		var nIndex = 0; // 변경할 이미지의 Index
 		if (bAuto == true) {

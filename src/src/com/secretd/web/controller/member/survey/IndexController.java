@@ -1,4 +1,4 @@
-package src.com.secretd.web.controller.guest.survey;
+package src.com.secretd.web.controller.member.survey;
 
 import java.io.IOException;
 
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/guest/survey/index")
-public class ListController extends HttpServlet{
+@WebServlet("/member/survey/index")
+public class IndexController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/guest/survey/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/member/survey/index.jsp").forward(request, response);
 	}
 }

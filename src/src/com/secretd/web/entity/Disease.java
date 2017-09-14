@@ -9,23 +9,23 @@ public class Disease {
 	private String name;
 	private String explanation;
 	private Blob picture;
-	private String managerI;
-	private int countCmt;
-	
-	
+	private String mangerId;
+	private String category;
 
 	public Disease() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Disease(String number, String classCode, String name, String explanation, Blob picture, String managerI) {
+	public Disease(String number, String classCode, String name, String explanation, Blob picture, String mangerId,
+			String category) {
 		super();
 		this.number = number;
 		this.classCode = classCode;
 		this.name = name;
 		this.explanation = explanation;
 		this.picture = picture;
-		this.managerI = managerI;
+		this.mangerId = mangerId;
+		this.category = category;
 	}
 
 	public String getNumber() {
@@ -64,24 +64,25 @@ public class Disease {
 		return picture;
 	}
 
-	public void setPicture(Blob blob) {
-		this.picture = blob;
+	public void setPicture(Blob picture) {
+		this.picture = picture;
 	}
 
-	public String getManagerI() {
-		return managerI;
+	public String getMangerId() {
+		return mangerId;
 	}
 
-	public void setManagerI(String managerI) {
-		this.managerI = managerI;
-	}
-	public int getCountCmt() {
-		return countCmt;
+	public void setMangerId(String mangerId) {
+		this.mangerId = mangerId;
 	}
 
-	public void setCountCmt(int countCmt) {
-		this.countCmt = countCmt;
+	public String getCategory() {
+		return category;
 	}
 
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
 	
 }

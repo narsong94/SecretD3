@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/index")
 public class IndexController extends HttpServlet{
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response); // 이어서 출발
-
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
 	}
 }

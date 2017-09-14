@@ -76,4 +76,53 @@ public class JdbcMemberDao implements MemberDao {
 	      return member;
 	   }
 
+	@Override
+	public int edit(String id, String pwd) {
+		int result = 0;
+		String sql = "UPDATE Member SET pwd= ? WHERE id = ?";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, pwd);
+			st.setString(2, id);
+			result = st.executeUpdate();
+			st.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	@Override
+	public boolean duplicateIdCheck(String id) {
+		boolean result=false;
+		String sql = "SELECT * FROM Member WHERE id=?";
+		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, id);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {
+				result=true;		
+			}
+			System.out.println(result);
+			rs.close();
+			st.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 }

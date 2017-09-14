@@ -9,4 +9,8 @@ public interface MemberDao {
 	
 	Member get(String id);
 
+	int edit(String id, String pwd);
+
+	boolean duplicateIdCheck(String id);
+
 }

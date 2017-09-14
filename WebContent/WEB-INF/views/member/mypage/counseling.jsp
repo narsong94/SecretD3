@@ -1,49 +1,113 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
-<link rel="stylesheet" type="text/css" href="../../css/mypage/counseling.css">
+<link href="../../css/reset.css" type="text/css" rel="stylesheet" />
+<link href="../../css/headfoot.css" type="text/css" rel="stylesheet" />
+<link href="../../css/main/mypage.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+
+	<!-- 헤더부분 -->
 	<jsp:include page="../../inc/header.jsp" />
 
-	<main id="body" class="clearfix">
-	<div class="content-container">
-		<div id="notice-title" class="title">
-			<p>My Page</p>
-		</div>
 
-		<div class="main">
-			<h3>익명 상담</h3>
-
-			<table class="table">
-				<tr>
-					<th>순번</th>
-					<th>선택</th>
-					<th>제목</th>
-					<th>게시일</th>
-				</tr>
-				<tr>
-					<td class="w50">23</td>
-					<td class="w50"><input type="checkbox"></td>
-					<td><a href="">항문에 뾰루지가 났어요</a></td>
-					<td class="w100">2017.01.02</td>
-				</tr>
-			</table>
-			<div class="btn-padding">
-				<input type="checkbox" name="전체 선택" />전체선택 
-				<input type="submit" value="삭제" class="btn btn-default" /> 
-				<input type="submit" value="글쓰기" class="btn btn-default"/>
-			</div>
-		</div>
+	<main class="main">
+	<div class="title">
+		<img src="../../images/bg-cscenter.jpg" />
 	</div>
-	</main>
 
-	<jsp:include page="../../inc/footer.jsp" />
+	<jsp:include page="inc/aside.jsp" />
+
+	<div class="mp-container">
+		<h2>익명상담 게시글</h2>
+		<form id="DeleteForm" method="post">
+			<table class="list-table">
+				<tr>
+					<th class="w70">순번</th>
+					<th class="w70"><input type="checkbox" id="allcheck"
+						onclick="allChk(this);" /></th>
+
+					<th class="text-left">제목</th>
+					<th class="w100">날짜</th>
+				</tr>
+
+				<c:forEach var="n" items="${list}">
+					<tr>
+						<td>${n.number}</td>
+						<td><input type="checkbox" name="deleteCheck"
+							value="${n.number}"></td>
+						<td class="text-left text-indent"><a
+							href="../guest/counseling-detail?number=${n.number}">${n.title}</a></td>
+						<td>${n.date}</td>
+
+					</tr>
+				</c:forEach>
+
+
+			</table>
+			<div class="btn-pad pad">
+				<input class="btn" name="button" type="submit" value="삭제" />
+			</div>
+		</form>
+	</div>
+	<jsp:include page="../../inc/footer.jsp" /> </main>
+	<!-- footer부분 -->
 </body>
+
+<script type="text/javascript">
+	function allChk(obj) {
+		var chkObj = document.getElementsByName("deleteCheck");
+		var rowCnt = chkObj.length - 1;
+		var check = obj.checked;
+		if (check) {
+			for (var i = 0; i <= rowCnt; i++) {
+				if (chkObj[i].type == "checkbox")
+					chkObj[i].checked = true;
+			}
+		} else {
+			for (var i = 0; i <= rowCnt; i++) {
+				if (chkObj[i].type == "checkbox") {
+					chkObj[i].checked = false;
+				}
+			}
+		}
+	}
+	function deleteGo() { //여러 게시물을 선택하고 삭제하기
+		var memberChk = new Array();
+		memberChk = document.getElementsByName("deleteCheck");
+		alert(memberChk);
+		var chked = false;
+		var indexnum = false;
+		var number = new Array();
+		for (i = 0; i < memberChk.length; i++) {
+			if (memberChk[i].checked) {
+				alert("Sss");
+				var mnumber = memberChk.value;
+				alert(mnumber);
+				number[i] = mnumber;
+				indexnum = true;
+			}
+		}
+
+		if (!indexnum) {
+			alert("삭제할 게시물을 선택해주세여");
+			return;
+		}
+
+		DeleteForm.method = "POST";
+		DeleteForm.action = "";
+		DeleteForm.submit();
+
+	}
+</script>
+
+
+
 </html>
