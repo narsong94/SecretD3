@@ -36,8 +36,7 @@
 
 
 			<form action="list.jsp" method="post" class="pw-find-info clearfix">
-				<input type="radio" name="id-find" class="id-find-list" />hy8789 <label
-					id="id-find">가입: 2017.01.01</label>
+				<input type="radio" name="id-find" class="id-find-list" />${param.id} 
 			</form>
 			<div class="find-next-info">
 				<a href="../../login"><input type="button"

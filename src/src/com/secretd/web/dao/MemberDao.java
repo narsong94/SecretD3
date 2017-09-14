@@ -13,4 +13,8 @@ public interface MemberDao {
 
 	boolean duplicateIdCheck(String id);
 
+	String get(String name, String email);
+
+	String get(String id, String name, String email);
+
 }

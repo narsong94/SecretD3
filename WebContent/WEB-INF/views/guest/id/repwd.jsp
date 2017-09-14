@@ -35,25 +35,44 @@
 	</div>
 	<div class="nt-container">
 		<div class="form">
-			<h2>비밀번호 찾기</h2>
-			<h3>비밀번호 찾는 방법을 선택해 주세요.</h3>
+			<h2>아이디 찾기</h2>
+			<h3>아이디 찾는 방법을 선택해 주세요.</h3>
 			<div class="find">
 
-				<form method="post" class="id-find-form clearfix">
-					<div class="email-text">
-						<div class="id-find-email-label">
-							<label>이름</label><br> <label>이름</label><br> <label>이메일
-								주소</label>
-						</div>
-						<div class="id-find-email-input">
-							<input type="text" name="id" /> <input type="text" name="name" />
-							<input type="text" name="email" />
-						</div>
+				<form action="list.jsp" method="post" class="id-find-form clearfix">
+					<div>
+						<input type="radio" name="idfind" class="whatfind" />회원정보에 등록한
+						휴대전화로 인증
 					</div>
-					<div class="find-next">
-						<a href="info-pw"><input type="button" class="btn" value="다음" /></a>
+					<div class="phone-text">
+						<div class="id-find-phone-label">
+							<label>이름</label><br> <label>핸드폰 번호</label>
+						</div>
+						<div class="id-find-phone-input">
+							<input type="text" name="name" /> <input type="text"
+								name="phone" />
+						</div>
 					</div>
 				</form>
+
+				<form action="list.jsp" method="post" class="id-find-form clearfix">
+					<div>
+						<input type="radio" name="idfind" class="whatfind" />회원정보에 등록한
+						이메일으로 인증
+					</div>
+					<div class="email-text">
+						<div class="id-find-email-label">
+							<label>이름</label><br> <label>이메일 주소</label>
+						</div>
+						<div class="id-find-email-input">
+							<input type="text" name="name" /> <input type="text"
+								name="email" />
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="find-next">
+				<a href="info"><input type="button" class="btn" value="다음" /></a>
 			</div>
 		</div>
 	</div>

@@ -39,33 +39,16 @@
 			<h3>아이디 찾는 방법을 선택해 주세요.</h3>
 			<div class="find">
 
-				<form action="list.jsp" method="post" class="id-find-form clearfix">
+				<form method="post" class="id-find-form clearfix">
 					<div>
-						<input type="radio" name="idfind" class="whatfind" />회원정보에 등록한
-						휴대전화로 인증
-					</div>
-					<div class="phone-text">
-						<div class="id-find-phone-label">
-							<label>이름</label><br> <label>핸드폰 번호</label>
-						</div>
-						<div class="id-find-phone-input">
-							<input type="text" name="name" /> <input type="text"
-								name="phone" />
-						</div>
-					</div>
-				</form>
-
-				<form action="list.jsp" method="post" class="id-find-form clearfix">
-					<div>
-						<input type="radio" name="idfind" class="whatfind" />회원정보에 등록한
-						이메일으로 인증
+					<a>가입할 때 입력하신 이름과 이메일를 통해서 찾을 수 있습니다.</a>
 					</div>
 					<div class="email-text">
 						<div class="id-find-email-label">
 							<label>이름</label><br> <label>이메일 주소</label>
 						</div>
 						<div class="id-find-email-input">
-							<input type="text" name="name" /> <input type="text"
+							<input type="text" name="name" /> <input type="text" placeholder="aaa@naver.com"
 								name="email" />
 						</div>
 					</div>
@@ -73,6 +56,9 @@
 			</div>
 			<div class="find-next">
 				<a href="info"><input type="button" class="btn" value="다음" /></a>
+			</div>
+			<div>
+			비밀번호를 분실한 경우는 <a href="find-pw">여기</a>를 클릭하세요
 			</div>
 		</div>
 	</div>

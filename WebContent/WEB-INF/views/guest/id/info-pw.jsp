@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,18 +31,21 @@
 	</div>
 	<div class="nt-container">
 		<div class="form">
-			<h2>비밀번호 찾기</h2>
-			<h3>고객님의 정보와 일치하는 비밀번호입니다.</h3>
-
-
 			<form action="list.jsp" method="post" class="pw-find-info clearfix">
-				<input type="radio" name="id-find" class="id-find-list" />비밀번호 <label
-					id="id-find">변경: 2017.01.01</label>
-			</form>
-			<div class="find-next-info2">
-				<a href="../../login"><input type="button"
-					class="btn btn-default btn-pad" value="로그인 하기" /></a> 
-			</div>
+				<div class="email-text">
+					<div class="id-find-email-label">
+						<label>현재 비번</label><br> <label>새 비번</label><br> <label>새 비번확인
+							</label>
+					</div>
+					<div class="id-find-email-input">
+						<input type="text" name="pwd" /> <input type="text" name="newPwd" />
+						<input type="text" name="newPwd" />
+					</div>
+				</div>
+				<div class="find-next-info2">
+					<input type="submit" name="btn" class="btn" value="확인" />
+				</div>
+				</form>
 		</div>
 	</div>
 	</main>
