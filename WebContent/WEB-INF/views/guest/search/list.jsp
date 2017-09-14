@@ -38,7 +38,7 @@
 				</ul>
 			</div>
 			<c:set var="d1" value="감염성 및 기생충 질환"></c:set>
-			<div class="search-form">
+			<div class="search-form2">
 				<h1 class="hidden">강좌검색 폼</h1>
 				<form>
 					<select name="c" class="ctg">

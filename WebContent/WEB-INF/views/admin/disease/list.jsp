@@ -39,6 +39,7 @@
 			</div>
 			<c:set var="d1" value="감염성 및 기생충 질환"></c:set>
 			<div class="search-form">
+			<a href="reg"><input class="btn" type="button" value="삽입"></a>
 				<h1 class="hidden">강좌검색 폼</h1>
 				<form>
 					<select name="c" class="ctg">
@@ -53,22 +54,20 @@
 			</div>
 		</div>
 
-		<a href="reg"><input type="button" value="삽입"></a>
-
-		<table class="table">
+		<table class="list-table">
 			<tr>
-				<th>분류</th>
-				<th>번호</th>
-				<th>이름</th>
+				<th class="w70">분류</th>
+				<th class="w70">번호</th>
+				<th class="w140">이름</th>
 				<th>내용</th>
-				<th>사진</th>
+				<th class="w70">사진</th>
 			</tr>
 			<c:forEach var="n" items="${list}">
 				<tr>
 					<td>${n.classCode}</td>
 					<td>${n.number}</td>
 					<td><a href="detail?name=${n.name}">${n.name}</a></td>
-					<td>${n.explanation}</td>
+					<td class="text-left">${n.explanation}</td>
 					<td>${n.picture}</td>
 				</tr>
 			</c:forEach>

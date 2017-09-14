@@ -18,7 +18,7 @@
 		<img src="../../images/bg-search.png" />
 	</div>
 	<div class="sr-container">
-		<form method="post">
+		<form method="post"  class="insert-form">
 			<table class="table">
 				<tr>
 					<th> 질병 분류 코드</th>
@@ -41,10 +41,10 @@
 					<td><textarea class="none" type="text" name="explanation">value="${detail.explanation}"</textarea></td>
 				</tr>
 			</table>
-			<div class="btn-pad">
+			<div class="btn-pad3">
 				<input type="hidden" name="name" value="${detail.name}"/>
 				<input type="submit" value="저장" class="btn"/>
-				<a href="detail?id=${detail.name}" class="btn">취소</a>
+				<a href="detail?name=${detail.name}" class="btn">취소</a>
 			</div>
 		</form>
 	</div>

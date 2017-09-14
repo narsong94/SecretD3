@@ -18,7 +18,7 @@
 		<img src="../../images/bg-search.png" />
 	</div>
 	<div class="sr-container">
-		<form method="post">
+		<form method="post"  class="insert-form">
 			<table class="table">
 				<tr>
 					<th> 질병 분류 코드</th>
@@ -41,10 +41,10 @@
 					<td>${detail.explanation}</td>
 				</tr>
 			</table>
-			<div class="btn-pad">
+			<div class="btn-pad3">
 				<a href="list" class="btn">목록</a>
-				<a href="detail?name=${detail.name}" class="btn">수정</a>
-				<a href="detail?name=${detail.name}" class="btn">삭제</a>
+				<a href="edit?name=${detail.name}" class="btn">수정</a>
+				<a href="delete?name=${detail.name}" class="btn">삭제</a>
 			</div>
 		</form>
 	</div>
