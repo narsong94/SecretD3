@@ -45,7 +45,7 @@
 				<div class="join-form">
 					<p>아이디</p>
 					<input id="userId" name="id" type="text" onkeydown="inputIdChk()" />
-					<input type="button" value="중복확인" onclick="openIdChk()"> <input
+					<input class="btn2" type="button" value="중복확인" onclick="openIdChk()"> <input
 						type="hidden" id="idDuplication" value="idUncheck">
 					<p>비밀번호</p>
 					<input name="pwds" type="password" />

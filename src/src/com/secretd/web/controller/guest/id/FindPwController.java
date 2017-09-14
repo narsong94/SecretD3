@@ -35,7 +35,7 @@ public class FindPwController extends HttpServlet {
 		System.out.println(id);
 
 		if (!(pwd == null))
-			response.sendRedirect("pwdSearch_ok?id_check=" + id + "&pwd_check=" + pwd);
+			response.sendRedirect("info-pw?pwd=" + pwd);
 		else {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();

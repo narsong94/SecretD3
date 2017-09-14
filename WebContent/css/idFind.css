@@ -78,12 +78,12 @@ body, h1, h2, p {
 }
 
 .find-next {
-	padding: 10px;
-	padding-left: 190px;
+	padding-top: 20px;
 	cursor: pointer; 
 	border : 1px solid transparent;
 	border-radius: 15px;
 	border: 1px solid transparent;
+	    text-align: center;
 }
 
 .find-next-info {
@@ -94,7 +94,7 @@ body, h1, h2, p {
 	border-radius: 15px;
 }
 .find-next-info2 {
-	padding: 0px 145px;
+	padding: 35px 0px;
 	padding-top: 10x;
 	cursor: pointer;
 	border: 1px solid transparent;
@@ -136,43 +136,47 @@ body, h1, h2, p {
 	padding-left: 2%;
 }
 
-.phone-text, .email-text {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	position: relative;
-	left: 5%;
-	float: left;
-	padding-left: 60px;
-}
-
-.phone-text .id-find-phone-label {
-	/* position: relative;
-	left: 10px; */
-	text-align: left;
-	font-size: 15px;
-	font-style: bold;
-	font-family: 맑은 고딕, 고딕, sans-selif;
-	margin-right: 5px;
-	float: left;
-	line-height: 250%
-}
 
 .id-find-form{
 	padding: 10px 0px;
 }
 
-.id-find-phone-input, .id-find-email-input {
+.id-find-email-input {
 	width: 200px;
 	float: left;
 }
 
-.phone-text  input[type="text"], .email-text  input[type="text"] {
+.expl{
+	    padding-top: 30px;
+}
+
+.expl a {
+    font-size: 18px;
+}
+.email-text{
+	   padding: 50px 80px;
+}
+
+.email-text  input[type="text"] {
 	width: 300px;
 	height: 25px;
 	border: 2px solid #b4b1b1;
 	line-height: 200%;
 	margin: 5px;
 	padding-left: 5px;
+}
+
+.click{
+    padding-top: 23px;
+}
+.click a{
+	font-size: 17x;
+	text-decoration: none;
+	font-weight: bold;
+	color: #004080;
+}
+.click a:hover{
+	color: #ff8080;
 }
 
 .asr {
@@ -256,9 +260,8 @@ body, h1, h2, p {
 	width: inherit-30px;
 	height: 150px;
 	border: 3px solid #e9e9e9;
-	padding-top: 15px;
-	padding-left: 30px;
-	margin-bottom: 10px;
+	padding: 20px 0px;
+	margin-bottom: 20px;
 }
 
 .id-find-list {
@@ -268,9 +271,9 @@ body, h1, h2, p {
 	font: 맑은 고딕;
 }
 
-.pw-find-info input {
+.pw-find-info .id-info{
 	margin-top: 50px;
-	padding-left: 50px;
+	text-align: center;
 	font: 맑은 고딕;
 }
 

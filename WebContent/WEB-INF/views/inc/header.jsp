@@ -26,10 +26,15 @@
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/survey/index">Survey</a>
 							</c:if></li>
-						<li class="none"><c:if test="${ empty sessionScope.id }">
+						<li><c:if test="${ empty sessionScope.id }">
 								<a href="${path}/guest/counseling/list">Counseling</a>
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/counseling/list">Counseling</a>
+							</c:if></li>
+						<li class="none"><c:if test="${ empty sessionScope.id }">
+								<a href="${path}/guest/hospital/list">Hospital</a>
+							</c:if> <c:if test="${ not empty sessionScope.id }">
+								<a href="${path}/member/hospital/list">Hospital</a>
 							</c:if></li>
 					</ul></li>
 				<li><c:if test="${ empty sessionScope.id }">
@@ -38,9 +43,8 @@
 						<a href="${path}/logout">Logout</a>
 					</c:if></li>
 				<li><c:if test="${ empty sessionScope.id }">
-						<a href="${path}/guest/Join">Join</a>
-					</c:if>
-					<c:if test="${ not empty sessionScope.id }">
+						<a href="${path}/guest/join">Join</a>
+					</c:if> <c:if test="${ not empty sessionScope.id }">
 						<a href="${path}/member/mypage/info">My Page</a>
 					</c:if></li>
 				<li><a>CS Center</a>
@@ -55,10 +59,15 @@
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/faq/list">FAQ</a>
 							</c:if></li>
-						<li class="none"><c:if test="${ empty sessionScope.id }">
+						<li><c:if test="${ empty sessionScope.id }">
 								<a href="${path}/guest/letter/insert">1:1 문의</a>
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/letter/insert">1:1 문의</a>
+							</c:if></li>
+						<li class="none"><c:if test="${ empty sessionScope.id }">
+								<a href="${path}/admin/page">ADMIN</a>
+							</c:if> <c:if test="${ not empty sessionScope.id }">
+								<a href="${path}/admin/notice/list">ADMIN</a>
 							</c:if></li>
 					</ul></li>
 			</ul>

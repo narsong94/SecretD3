@@ -26,7 +26,7 @@ public class RegController extends HttpServlet {
 		id = (String) session.getAttribute("id");
 		if (session.getAttribute("id") == null) {
 			out.write(
-					"<script>alert('로그인 필요');location.href='../../member/login?returnURL=../admin/hospital/reg';</script>");
+					"<script>alert('로그인 필요');location.href='../../login?returnURL=../admin/hospital/reg';</script>");
 
 		} else
 			request.getRequestDispatcher("/WEB-INF/views/admin/hospital/reg.jsp").forward(request, response);

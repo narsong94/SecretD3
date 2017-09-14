@@ -40,6 +40,11 @@
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/counseling/list">Counseling</a>
 							</c:if></li>
+							<li class="none"><c:if test="${ empty sessionScope.id }">
+								<a href="${path}/guest/hospital/list">Hospital</a>
+							</c:if> <c:if test="${ not empty sessionScope.id }">
+								<a href="${path}/member/hospital/list">Hospital</a>
+							</c:if></li>
 					</ul></li>
 				<li><c:if test="${ empty sessionScope.id }">
 						<a href="${path}/login">Login</a>

@@ -12,6 +12,10 @@ public class Hospital {
 	private String score;
 	private String manager_id;
 	
+	public Hospital() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Hospital(String id, String subject, String name, String address, String phone_number, String opening_hours,
 			String homepage, String character, String score, String manager_id) {
 		super();

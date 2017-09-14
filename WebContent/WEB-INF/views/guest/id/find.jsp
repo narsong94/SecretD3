@@ -36,29 +36,32 @@
 	<div class="nt-container">
 		<div class="form">
 			<h2>아이디 찾기</h2>
-			<h3>아이디 찾는 방법을 선택해 주세요.</h3>
+			<h3>가입하실 때 입력하신 이름과 이메일를 통해서 찾을 수 있습니다.</h3>
 			<div class="find">
 
 				<form method="post" class="id-find-form clearfix">
-					<div>
-					<a>가입할 때 입력하신 이름과 이메일를 통해서 찾을 수 있습니다.</a>
+					<div class="expl">
+						<a>고객님의 정보를 정확하게 써주세요.</a>
 					</div>
 					<div class="email-text">
 						<div class="id-find-email-label">
-							<label>이름</label><br> <label>이메일 주소</label>
+							<label>이름</label>
+							<p>
+								<label>이메일 주소</label>
 						</div>
 						<div class="id-find-email-input">
-							<input type="text" name="name" /> <input type="text" placeholder="aaa@naver.com"
-								name="email" />
+							<input type="text" name="name" />
+							<p>
+								<input type="text" placeholder="aaa@naver.com" name="email" />
 						</div>
 					</div>
 				</form>
+					<div class="click">
+						비밀번호를 분실한 경우는 <a href="find-pw">여기</a>를 클릭하세요
+					</div>
 			</div>
 			<div class="find-next">
 				<a href="info"><input type="button" class="btn" value="다음" /></a>
-			</div>
-			<div>
-			비밀번호를 분실한 경우는 <a href="find-pw">여기</a>를 클릭하세요
 			</div>
 		</div>
 	</div>

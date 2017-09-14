@@ -36,10 +36,13 @@
 	<div class="nt-container">
 		<div class="form">
 			<h2>비밀번호 찾기</h2>
-			<h3>비밀번호 찾는 방법을 선택해 주세요.</h3>
+			<h3>가입하실 때 입력하신 이름과 이메일를 통해서 찾을 수 있습니다.</h3>
 			<div class="find">
 
 				<form method="post" class="id-find-form clearfix">
+					<div class="expl">
+						<a>고객님의 정보를 정확하게 써주세요.</a>
+					</div>
 					<div class="email-text">
 						<div class="id-find-email-label">
 							<label>이름</label><br> <label>이름</label><br> <label>이메일
@@ -50,10 +53,10 @@
 							<input type="text" name="email" />
 						</div>
 					</div>
-					<div class="find-next">
-						<a href="info-pw"><input type="button" class="btn" value="다음" /></a>
-					</div>
 				</form>
+				<div class="find-next">
+					<a href="info-pw"><input type="button" class="btn" value="다음" /></a>
+				</div>
 			</div>
 		</div>
 	</div>

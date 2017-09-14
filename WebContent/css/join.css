@@ -90,8 +90,22 @@ body, h1, h2 {
 	height: 40px;
 	font-size: 18px;
 }
+.btn2 {
+	display: inline-block;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	background-image: none;
+	border: 1px solid #004080;
+	border-radius: 4px;
+	padding: 4px 12px;
+	color: #ffffff;
+	font-weight: bold;
+	background: #004080;
+	text-decoration: none;
+}
 
-.btn:hover {
+.btn:hover {  
 	background: #ff8080;
 	border: 1px solid #ff8080;
 	color: white;

@@ -1,5 +1,12 @@
 package src.com.secretd.web.dao.jdbc;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import src.com.secretd.web.dao.HospitalDao;
@@ -81,7 +88,7 @@ public class JdbcHospitalDao implements HospitalDao{
 	}
 
 	@Override
-	public Hospital get(String h_id) {
+	public Hospital get(String id) {
 		Hospital h = null;
 		String sql = "SELECT * FROM Hospital WHERE id = ?";
 		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
@@ -111,7 +118,7 @@ public class JdbcHospitalDao implements HospitalDao{
 	}
 
 	@Override
-	public int edit(String h_id, String subject, String name, String address, String phone_number) {
+	public int edit(String id, String subject, String name, String address, String phone_number) {
 		int result=0;
 		String sql = "UPDATE Hospital SET subject= ?, name = ?, address=?, phone_number=? WHERE id = ?";
 		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";

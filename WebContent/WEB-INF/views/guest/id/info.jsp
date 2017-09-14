@@ -35,8 +35,8 @@
 			<h3>고객님의 정보와 일치하는 아이디 목록입니다.</h3>
 
 
-			<form action="list.jsp" method="post" class="pw-find-info clearfix">
-				<input type="radio" name="id-find" class="id-find-list" />${param.id} 
+			<form method="post" class="pw-find-info clearfix">
+				<div class="id-info">${param.id} aa</div>
 			</form>
 			<div class="find-next-info">
 				<a href="../../login"><input type="button"

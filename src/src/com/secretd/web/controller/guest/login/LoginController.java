@@ -49,7 +49,7 @@ public class LoginController extends HttpServlet {
 			if (url != null)
 				response.sendRedirect(url);
 			else
-				response.sendRedirect("../index");
+				response.sendRedirect("index");
 
 		}
 	}

@@ -29,25 +29,47 @@
 	<div class="title">
 		<img src="../../images/bg-cscenter.jpg" />
 	</div>
+	
 	<div class="nt-container">
 		<div class="form">
-			<form action="list.jsp" method="post" class="pw-find-info clearfix">
+			<h2>비밀번호 찾기</h2>
+			<h3>고객님의 정보와 일치하는 비밀번호입니다.</h3>
+
+
+			<form method="post" class="pw-find-info clearfix">
+				<div class="id-info">${param.pwd}</div>
+			</form>
+			<div class="find-next-info">
+				<a href="../../login"><input type="button"
+					class="btn btn-default btn-pad" value="로그인 하기" /></a> <a
+					href="find-pw"><input type="button"
+					class="btn btn-default btn-pad" value="비밀번호 찾기" /></a>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="nt-container">
+		<div class="form">
+			<h2>비밀번호 찾기</h2>
+			<h3>비밀번호 찾는 방법을 선택해 주세요.</h3>
+			<div class="find">
+			<form method="post" class="id-find-info clearfix">
 				<div class="email-text">
 					<div class="id-find-email-label">
-						<label>현재 비번</label><br> <label>새 비번</label><br> <label>새 비번확인
-							</label>
+						<label>현재 비번</label><p> <label>새 비번</label><p> <label>새
+							비번확인 </label>
 					</div>
 					<div class="id-find-email-input">
 						<input type="text" name="pwd" /> <input type="text" name="newPwd" />
 						<input type="text" name="newPwd" />
 					</div>
 				</div>
-				<div class="find-next-info2">
-					<input type="submit" name="btn" class="btn" value="확인" />
-				</div>
-				</form>
+			</form>
+			<div class="find-next-info2">
+				<input type="submit" name="btn" class="btn" value="확인" />
+			</div>
+			</div>
 		</div>
-	</div>
+	</div> -->
 	</main>
 	<!-- footer 부분 -->
 	<jsp:include page="../../inc/footer.jsp" />

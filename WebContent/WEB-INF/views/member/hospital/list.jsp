@@ -23,7 +23,7 @@
 		<h2 class="hidden">공지사항</h2>
 
 		<div class="search-form2">
-			<a class="btn" href="reg">병원추가</a>
+			<a class="btn" href="../../admin/hospital/reg">병원추가</a>
 			<h3 class="hidden">병원 검색 폼</h3>
 			<form method="get">
 				<input type="text" class="input-text"  name="name" placeholder="병원명을 입력하세요" /> <input
