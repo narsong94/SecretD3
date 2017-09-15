@@ -40,7 +40,7 @@ public class LoginController extends HttpServlet {
 			out.println("alert('해당되는 아이디가 존재하지 않습니다.');history.go(-1);");
 			out.println("</script>");
 			out.flush();
-			response.sendRedirect("login");
+
 		} else if (!member.getPwd().equals(pwd)) {
 			System.out.println("2");
 			out.println("<script language='javascript'>");

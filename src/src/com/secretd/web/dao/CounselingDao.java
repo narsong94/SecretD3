@@ -16,7 +16,7 @@ public interface CounselingDao {
 
 	List<Comment> getComment(String number);
 
-	String getNickname(String number);
+	String getNickname(String memberId);
 
 	int getCount(String number);
 
@@ -24,7 +24,7 @@ public interface CounselingDao {
 
 	int updateHit(String number);
 
-	List<Counseling> getList2(String category2, String content);
+	List<Counseling> getList2(String category2, String content, int page);
 
-	int getCount2(String categoryy);
+	int getCount2(String categoryy,String content);
 }

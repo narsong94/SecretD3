@@ -42,7 +42,7 @@ public class JdbcMyLetterDao implements MyLetterDao{
 		        	L.setNumber(rs2.getInt("number"));
 		        	L.setDate(rs2.getDate("date"));
 		        	L.setTitle(rs2.getString("title"));
-		        	L.setCheck(rs2.getString("chk"));
+		        	L.setChk(rs2.getString("chk"));
 		        
 		      
 		            list.add(L);

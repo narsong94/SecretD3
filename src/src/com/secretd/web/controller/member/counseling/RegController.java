@@ -1,12 +1,17 @@
 package src.com.secretd.web.controller.member.counseling;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/member/counseling/reg")
 public class RegController extends HttpServlet {
@@ -16,37 +21,56 @@ public class RegController extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/views/member/counseling/reg.jsp").forward(request, response);
 	}
 
-/*	@Override
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.setCharacterEncoding("UTF-8");
-	
-	String id =request.getParameter("id");
-	String title=request.getParameter("title");
-	String content = request.getParameter("content");
-	
-	  String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-      String sql = "insert into Notice (id, title,content,writerId) values ((select IFNULL(MAX(CAST(id as unsigned)),0)+1 from Notice as b) ,?,?,?)";
-      try {
-         Class.forName("com.mysql.jdbc.Driver");
-         Connection conn = DriverManager.getConnection(url, "sist", "cclass");
-         // Statement st = conn.createStatement();
-         PreparedStatement st = conn.prepareStatement(sql);
-         st.setString(1, title);
-         st.setString(2, content);
-         st.setString(3, "newlec");
-         int result = st.executeUpdate();
-        업데이트 된 row갯수를 알려줌. st.executeUpdate
-         st.close();
-         conn.close();
-      } catch (ClassNotFoundException e) {
-         e.printStackTrace();
-      } catch (SQLException e) {
-         e.printStackTrace();
-      }
-      
-      response.sendRedirect("list");
-      sendRedirect그냥 딴페이지로 가는 거. 목록을 보여줘야되니까
-	
-   super.doPost(request, response);
-	}*/
+		int result = 0;
+		request.setCharacterEncoding("UTF-8");
+		
+		 HttpSession session =request.getSession();
+		   	
+		   	Object _memberId = session.getAttribute("id");
+			
+		   	String memberId = _memberId.toString();
+		
+		
+		String category = request.getParameter("Category");
+		String title =request.getParameter("title");
+		String content = request.getParameter("content");
+		
+		System.out.println("Category"+category);
+		System.out.println("title"+title);
+		System.out.println("content"+content);
+		System.out.println("memberid"+memberId);
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String sql = "INSERT INTO Counseling(`number`, `date`, `title`, `content`, `writer_id`, `category`, `hit`) VALUES((select IFNULL(MAX(CAST(number as unsigned)),0)+1 from Counseling as b), (select sysdate()), ?, ?, ?, ?, ?)"; 
+
+	      try {
+	         Class.forName("com.mysql.jdbc.Driver");
+	     	Connection conn = DriverManager.getConnection(url, "soonface", "2014");
+	         // Statement st = conn.createStatement();
+	    	PreparedStatement st = conn.prepareStatement(sql);
+	    	
+	         st.setString(1, title);
+	         st.setString(2, content);
+	         st.setString(3, memberId);
+	         st.setString(4, category);
+	         st.setString(5, "0");
+	         
+	         result = st.executeUpdate();
+	      
+	         st.close();
+	         conn.close();
+	      } catch (ClassNotFoundException e) {
+	         e.printStackTrace();
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }
+
+	      
+	      
+	      
+	      
+	      
+	      response.sendRedirect("list");
+	}
 }

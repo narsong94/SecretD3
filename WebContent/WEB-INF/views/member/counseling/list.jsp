@@ -64,7 +64,7 @@
 			<form method="get">
 				<!-- <label>과정검색</label> -->
 				<select name="category2" class="ctg">
-					<option value="전체">전체</option>
+					<option value="">전체</option>
 					<option value="산부인과">산부인과</option>
 					<option value="비뇨기과">비뇨기과</option>
 					<option value="항외과">항외과</option>
@@ -115,40 +115,95 @@
 
 				</c:if>
 			</table>
-			<c:set var="page" value="${param.p}" />
-			<c:set var="startNum" value="${page-((page-1)%5) }" />
-			<c:set var="lastNum"
-				value="${fn:substringBefore((count%10 == 0 ? count/10 : count/10 +1),'.')}" />
+			<c:if test="${a == 0}">
+	
+	<c:set var="page" value="${param.p}"/>
+	<c:set var="cat" value="${param.category}"/>
 
-			<div class="num">
-				<div>
-					<a href="?p=1">이전</a>
-				</div>
-				<ul>
+<c:set var="startNum" value="${page-((page-1)%5) }"/>
+<c:set var="lastNum" value="${fn:substringBefore((count%10 == 0 ? count/10 : count/10 +1),'.')}"/>
+ 
+ <div class="num">
+ 				
+				<div><a href="?p=1" >이전</a></div>
+			
+					<ul>
 					<c:forEach var="i" begin="0" end="4">
-
-						<c:set var="strong" value="" />
-						<c:if test="${page == startNum+i }">
-							<c:set var="strong" value="text-strong" />
+					
+					<c:set var="strong" value=""/>
+					<c:if test="${page == startNum+i }">
+						<c:set var="strong" value="text-strong"/>
 						</c:if>
-
+						
 						<c:if test="${startNum+i <= lastNum}">
-							<li><a class="${strong}" href="?p=${startNum+i}">${startNum+i}</a></li>
+						
+						<li><a class="${strong}" href="?category=${cat}&p=${startNum+i}">	${startNum+i}</a></li>
 						</c:if>
-
-
-						<!-- 	목록이 더이상 없으면 하이퍼링크 지움 -->
-						<c:if test="${startNum+i > lastNum}">
+					
+					
+					<!-- 	목록이 더이상 없으면 하이퍼링크 지움 -->
+						<c:if test="${startNum+i > lastNum}">	
 							<li>${startNum+i}</li>
 						</c:if>
 					</c:forEach>
-				</ul>
+					</ul>
 				<div>
 					<c:if test="${lastNum >= startNum+5 }">
-						<a href="?p=${startNum+5}">다음</a>
+					<a href="?p=${startNum+5}">다음</a>
+					<!-- 게시물 목록이 다 끝나면 다음이 안보임  -->
 					</c:if>
 				</div>
-			</div>
+
+    
+       <!--   <a class="btn btn-default" href="counseling-reg">글쓰기</a>  -->
+         </div>
+	</c:if>
+	
+	
+	<c:if test="${a == 1}">
+
+	<c:set var="page2" value="${param.p2}"/>
+	<c:set var="cat2" value="${param.category2}"/>
+	<c:set var="sub" value="검색"/>
+	<c:set var="content" value="${param.content}"/>
+	
+<c:set var="startNum2" value="${page2-((page2-1)%5) }"/>
+<c:set var="lastNum2" value="${fn:substringBefore((count2%10 == 0 ? count2/10 : count2/10 +1),'.')}"/>
+ 
+ <div class="num">
+				<div><a href="?category2=${cat2}&p2=1&sub=${sub}&content=${content}">이전</a></div>
+					<ul>
+					<c:forEach var="i" begin="0" end="4">
+					
+					<c:set var="strong" value=""/>
+					<c:if test="${page2 == startNum2+i }">
+						<c:set var="strong" value="text-strong"/>
+						</c:if>
+						
+						<c:if test="${startNum2+i <= lastNum2}">
+						
+						<li><a class="${strong}" href="?category2=${cat2}&p2=${startNum2+i}&sub=${sub}&content=${content}">${startNum2+i} </a></li>
+						
+						</c:if>
+					
+					<!-- 	목록이 더이상 없으면 하이퍼링크 지움 -->
+						<c:if test="${startNum2+i > lastNum2}">	
+							<li>${startNum2+i}</li>
+						</c:if>
+					</c:forEach>
+					</ul>
+				<div>
+					<c:if test="${lastNum2 >= startNum2+5 }">
+					<a href="?p2=${startNum2+5}">다음</a>
+					<!-- 게시물 목록이 다 끝나면 다음이 안보임  -->
+					</c:if>
+				</div>
+ 
+ 
+    
+       <!--   <a class="btn btn-default" href="counseling-reg">글쓰기</a>  -->
+         </div>
+	</c:if>
 		</div>
 		</div>
 	</main>

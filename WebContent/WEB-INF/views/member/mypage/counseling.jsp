@@ -44,7 +44,7 @@
 						<td><input type="checkbox" name="deleteCheck"
 							value="${n.number}"></td>
 						<td class="text-left text-indent"><a
-							href="../guest/counseling-detail?number=${n.number}">${n.title}</a></td>
+							href="../counseling/detail?number=${n.number}">${n.title}</a></td>
 						<td>${n.date}</td>
 
 					</tr>

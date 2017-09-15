@@ -10,20 +10,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.com.secretd.web.dao.NoticeDao;
-import src.com.secretd.web.entity.NoticeView;
+import src.com.secretd.web.entity.Notice;
+
 
 public class JdbcNoticeDao implements NoticeDao{
 
-	public List<NoticeView> getList(int page, String query) {
-		List<NoticeView> list = null;
-		String sql = "SELECT * FROM NoticeView WHERE title like ? order by regDate DESC limit ?,10";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+	public List<Notice> getList(int page, String query) {
+		List<Notice> list = null;
+		String sql = "SELECT * FROM Notice WHERE title like ? order by regDate DESC limit ?,10";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 
 		int offset = (page - 1) * 10;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, "%" + query + "%");
 			st.setInt(2, offset);
@@ -33,15 +34,13 @@ public class JdbcNoticeDao implements NoticeDao{
 			list = new ArrayList<>();
 
 			while (rs.next()) {
-				NoticeView n = new NoticeView();
+				Notice n = new Notice();
 				n.setId(rs.getString("ID"));
 				n.setTitle(rs.getString("TITLE"));
 				n.setWriterId(rs.getString("WRITERID"));
-				n.setWriterName(rs.getString("writerID"));
 				n.setHit(rs.getInt("HIT"));
 				n.setContent(rs.getString("CONTENT"));
 				n.setRegDate(rs.getDate("REGDATE"));
-				n.setCountCmt(rs.getInt("countCmt"));
 
 				list.add(n);
 			}
@@ -61,14 +60,14 @@ public class JdbcNoticeDao implements NoticeDao{
 		int count = 0;
 		String sqlCount = "SELECT COUNT(id) as count FROM Notice";
 
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 
 		// JDBC ?ìú?ùº?ù¥Î≤? Î°úÎìú
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			// ?ó∞Í≤? / ?ù∏Ï¶?
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 
 			// ?ã§?ñâ
 			Statement stCount = con.createStatement();
@@ -95,18 +94,18 @@ public class JdbcNoticeDao implements NoticeDao{
 		return count;
 	}
 
-	public NoticeView get(String id) {
+	public Notice get(String id) {
 
 		// ------------------Ï∂úÎ†•-----------------
-		NoticeView n = null;
-		String sql = "SELECT * FROM NoticeView WHERE id = ?";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		Notice n = null;
+		String sql = "SELECT * FROM Notice WHERE id = ?";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 
 		// JDBC ?ìú?ùº?ù¥Î≤? Î°úÎìú
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// ?ó∞Í≤? / ?ù∏Ï¶?
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			// ?ã§?ñâ
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, id);
@@ -114,15 +113,13 @@ public class JdbcNoticeDao implements NoticeDao{
 			ResultSet rs = st.executeQuery();
 			// Í≤∞Í≥º ?Ç¨?ö©?ïòÍ∏?
 			if (rs.next()) {
-				n = new NoticeView();
+				n = new Notice();
 				n.setId(rs.getString("ID"));
 				n.setTitle(rs.getString("TITLE"));
 				n.setHit(rs.getInt("HIT"));
 				n.setContent(rs.getString("CONTENT"));
 				n.setRegDate(rs.getDate("REGDATE"));
-				n.setWriterId(rs.getString("WRITERID"));
-				n.setWriterName(rs.getString("WRITERNAME"));
-				n.setCountCmt(rs.getInt("COUNTCMT"));
+				n.setWriterId(rs.getString("WRITERID"));				
 			}
 			rs.close();
 			st.close();
@@ -137,12 +134,12 @@ public class JdbcNoticeDao implements NoticeDao{
 
 	public void edit(String id, String title, String content) {
 		String sql = "UPDATE Notice SET title= ?,content = ? WHERE id = ?";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		// JDBC ?ìú?ùº?ù¥Î≤? Î°úÎìú
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// ?ó∞Í≤? / ?ù∏Ï¶?
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, title);
 			st.setString(2, content);
@@ -161,10 +158,10 @@ public class JdbcNoticeDao implements NoticeDao{
 
 	public void insert(String title, String content) {
 		String sql = "INSERT INTO Notice(id,title, content, writerId) VALUES((select ifnull(max(cast(id as signed integer)),0)+1 from Notice as b),?,?,?)";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, title);
 			st.setString(2, content);
@@ -183,12 +180,12 @@ public class JdbcNoticeDao implements NoticeDao{
 
 	public void delete(String id) {
 		String sql = "DELETE FROM Notice WHERE id = ?";
-		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		// JDBC ?ìú?ùº?ù¥Î≤? Î°úÎìú
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// ?ó∞Í≤? / ?ù∏Ï¶?
-			Connection con = DriverManager.getConnection(url, "sist", "cclass");
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, id);
 			int result = st.executeUpdate();

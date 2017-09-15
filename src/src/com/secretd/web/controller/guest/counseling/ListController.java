@@ -34,6 +34,7 @@ public class ListController extends HttpServlet {
 	     
 	     
 	     String _page = request.getParameter("p");
+	     String _page2 = request.getParameter("p2");
 	     String _category=request.getParameter("category");
 	     String _category2=request.getParameter("category2");
 	     String _content = request.getParameter("content");
@@ -45,13 +46,16 @@ public class ListController extends HttpServlet {
 		String content="";
 
 		int page=1; //전달이 안됐을 때 기본값
-
+		int page2=1;
 		int a=0;
 		
 	
 		if(_page!=null && !_page.equals(""))
 			page = Integer.parseInt(_page);
-		
+
+
+		if(_page2!=null && !_page2.equals(""))
+			page2 = Integer.parseInt(_page2);
 		if( _category != null  && ! _category.equals("") )
 			category =  _category;
 		
@@ -68,13 +72,14 @@ public class ListController extends HttpServlet {
 
 		if(name.equals("검색")) {
 		   request.setAttribute("a", 1);
-		   request.setAttribute("list3",counselingDao.getList2(category2,content));
-		   request.setAttribute("count",counselingDao.getCount2(category2));
+		   request.setAttribute("count",counselingDao.getCount2(category2,content));
+		   request.setAttribute("list3",counselingDao.getList2(category2,content,page2));
 		}
 		else {	
 			request.setAttribute("a", 0);
+			request.setAttribute("count",counselingDao.getCount2(category,content));
 			request.setAttribute("list2",counselingDao.getList(category,page));
-			request.setAttribute("count",counselingDao.getCount2(category));
+			
 		}
 	
 	     /*----------------댓글 숫자-------------------------------------   */

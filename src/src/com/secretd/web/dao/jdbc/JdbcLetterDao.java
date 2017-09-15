@@ -30,7 +30,7 @@ public class JdbcLetterDao implements LetterDao {
 				l = new Letter();
 				
 				l.setTitle(rs.getString("title"));
-				l.setWriterId(rs.getString("writer_id"));
+				l.setId(rs.getString("writer_id"));
 				l.setContent(rs.getString("content"));
 			}
 

@@ -30,7 +30,14 @@
 
 				<tr>
 					<th>분류</th>
-					<td></td>
+					<td>
+					<select name="Category" class="ctg">
+					<option value="">전체</option>
+					<option value="산부인과">산부인과</option>
+					<option value="비뇨기과">비뇨기과</option>
+					<option value="항외과">항외과</option>
+				</select>
+					</td>
 				</tr>
 
 				<tr>

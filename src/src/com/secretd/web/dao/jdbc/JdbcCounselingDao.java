@@ -318,15 +318,15 @@ public class JdbcCounselingDao implements CounselingDao {
 	}
 
 	@Override
-	public List<Counseling> getList2(String category2, String content) {
+	public List<Counseling> getList2(String category2, String content,int page) {
 
 		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-		String sql2 = "select * from Counseling where category LIKE ? && title LIKE ? ";
+		String sql2 = "select * from Counseling where category LIKE ? && title LIKE ? limit ?,10";
 
 		int n = 0;
 		List<Counseling> list2 = null;
 		Counseling c = null;
-
+		int offset =(page-1) *10;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url, "soonface", "2014");
@@ -334,6 +334,7 @@ public class JdbcCounselingDao implements CounselingDao {
 			PreparedStatement st2 = conn.prepareStatement(sql2);
 			st2.setString(1, "%" + category2 + "%");
 			st2.setString(2, "%" + content + "%");
+			 st2.setInt(3, offset);
 			ResultSet rs2 = st2.executeQuery();
 
 			list2 = new ArrayList<>();
@@ -364,20 +365,20 @@ public class JdbcCounselingDao implements CounselingDao {
 	}
 
 	@Override
-	public int getCount2(String categoryy) {
+	public int getCount2(String categoryy,String content) {
 
 		int Count = 0;
 
 		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-		String sqlcount = "SELECT COUNT(number) count FROM Counseling where category LIKE ?";
+		String sqlcount = "SELECT COUNT(number) count FROM Counseling where category LIKE ? && title LIKE ?";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url, "soonface", "2014");
 			// Statement st = conn.createStatement();
 			PreparedStatement stCount = conn.prepareStatement(sqlcount);
-			stCount.setString(1, categoryy);
-
+			stCount.setString(1, "%"+categoryy+"%");
+			 stCount.setString(2,"%"+content+"%");
 			ResultSet rscount = stCount.executeQuery();
 
 			rscount.next();

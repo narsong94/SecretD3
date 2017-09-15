@@ -34,7 +34,7 @@
 						<li class="none"><c:if test="${ empty sessionScope.id }">
 								<a href="${path}/guest/hospital/list">Hospital</a>
 							</c:if> <c:if test="${ not empty sessionScope.id }">
-								<a href="${path}/member/hospital/list">Hospital</a>
+								<a href="${path}/admin/hospital/list">Hospital</a>
 							</c:if></li>
 					</ul></li>
 				<li><c:if test="${ empty sessionScope.id }">

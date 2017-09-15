@@ -39,9 +39,9 @@ public class RegController extends HttpServlet {
 		ServletContext context = request.getServletContext();
 		path = context.getRealPath(path);
 		System.out.println("path : " + path);
-		MultipartRequest req = new MultipartRequest(request, path, 1024 * 10124 * 1000, "UTF-8",
+		/*MultipartRequest req = new MultipartRequest(request, path, 1024 * 10124 * 1000, "UTF-8",
 				new DefaultFileRenamePolicy());// lib -> cos.jar
-		request.setCharacterEncoding("UTF-8");
+*/		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -49,14 +49,14 @@ public class RegController extends HttpServlet {
 
 		Object _id = session.getAttribute("id");
 		String id = "";
-		String subject = req.getParameter("subject");
-		String name = req.getParameter("name");
-		String address = req.getParameter("address");
-		String phone_number = req.getFilesystemName("phone_number");
+		String subject = request.getParameter("subject");
+		String name = request.getParameter("name");
+		String address = request.getParameter("address");
+		String phone_number = request.getParameter("phone_number");
 
 		if (_id != null)
 			id = _id.toString();
-		String fileName = req.getFilesystemName("file");// (String)req.getFileNames().nextElement();
+		//String fileName = request.getFilesystemName("file");// (String)req.getFileNames().nextElement();
 		HospitalDao dao = new JdbcHospitalDao();
 		int result = dao.insert(subject, name, address, phone_number);
 		if (result == 1)

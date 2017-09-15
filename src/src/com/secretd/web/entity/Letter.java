@@ -4,59 +4,86 @@ import java.sql.Date;
 
 public class Letter {
 	private int number;
-	private Date date;
 	private String title;
+	private Date date;
+	private String id;
+	private String chk;
 	private String content;
-	private String writerId;
-	private String check;
+	
 	
 	public Letter() {
 		// TODO Auto-generated constructor stub
 	}
-	public Letter(int number, Date date, String title, String content, String writerId, String check) {
+
+
+	public Letter(int number, String title, Date date, String id, String chk, String content) {
 		super();
 		this.number = number;
-		this.date = date;
 		this.title = title;
+		this.date = date;
+		this.id = id;
+		this.chk = chk;
 		this.content = content;
-		this.writerId = writerId;
-		this.check = check;
 	}
+
+
 	public int getNumber() {
 		return number;
 	}
+
+
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+
+
 	public String getTitle() {
 		return title;
 	}
+
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public String getChk() {
+		return chk;
+	}
+
+
+	public void setChk(String chk) {
+		this.chk = chk;
+	}
+
+
 	public String getContent() {
 		return content;
 	}
+
+
 	public void setContent(String content) {
 		this.content = content;
-	}
-	public String getWriterId() {
-		return writerId;
-	}
-	public void setWriterId(String writerId) {
-		this.writerId = writerId;
-	}
-	public String getCheck() {
-		return check;
-	}
-	public void setCheck(String check) {
-		this.check = check;
 	}
 	
 	

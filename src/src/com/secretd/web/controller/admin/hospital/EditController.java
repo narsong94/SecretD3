@@ -36,21 +36,21 @@ public class EditController extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		   response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
+			String h_id = request.getParameter("h_id");
 			
 			HttpSession session = request.getSession();
 			if(session.getAttribute("id") == null)
-				out.write("<script>alert('·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù');location.href='../../member/login?returnURL=../admin/hospital/edit?id="+id+"';</script>");
+				out.write("<script>alert('ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤');location.href='../../member/login?returnURL=../admin/hospital/edit?id="+h_id+"';</script>");
 			else {		
-				String path = "/upload";
-				ServletContext context = request.getServletContext();
-				path = context.getRealPath(path);
-				MultipartRequest req = new MultipartRequest(request, path, 1024*10124*1000,"UTF-8",new DefaultFileRenamePolicy());//lib -> cos.jar
-			  
-			   String h_id = req.getParameter("h_id");
-			   String subject = req.getParameter("subject");
-			   String name= req.getParameter("name");
-			   String address= req.getParameter("address"); 
-			   String phone_number = req.getFilesystemName("phone_number");
+				//String path = "/upload";
+				//ServletContext context = request.getServletContext();
+				//path = context.getRealPath(path);
+				//MultipartRequest req = new MultipartRequest(request, path, 1024*10124*1000,"UTF-8",new DefaultFileRenamePolicy());//lib -> cos.jar
+
+			   String subject = request.getParameter("subject");
+			   String name= request.getParameter("name");
+			   String address= request.getParameter("address"); 
+			   String phone_number = request.getParameter("phone_number");
 
 			   //-------------------DB(dao)-----------------------------------
 			   HospitalDao hospitalDao = new JdbcHospitalDao();
@@ -58,7 +58,7 @@ public class EditController extends HttpServlet{
 			   if(result>0)
 				   response.sendRedirect("list");
 			   else {
-				   out.write("<script>alert('ÁË¼ÛÇÕ´Ï´Ù. ¼öÁ¤Áß ¿À·ù°¡ »ı°å½À´Ï´Ù.');location.href='edit?h_id="+h_id+"';</script>");
+				   out.write("<script>alert('ì£„ì†¡í•©ë‹ˆë‹¤. ìˆ˜ì •ì¤‘ ì˜¤ë¥˜ê°€ ìƒê²¼ìŠµë‹ˆë‹¤.');location.href='edit?h_id="+h_id+"';</script>");
 			   }
 			}
 	}

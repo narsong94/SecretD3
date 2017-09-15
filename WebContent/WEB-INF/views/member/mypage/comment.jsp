@@ -44,7 +44,7 @@
 						<td><input type="checkbox" name="deleteCheck"
 							value="${n.number}"></td>
 						<td class="text-left text-indent">${n.content}<a
-							href="../member/counseling/detail?number=${n.textnumber}">원문보기
+						href="../counseling/detail?number=${n.textnumber}">원문보기
 								▶</a></td>
 						<td>${n.date}</td>
 

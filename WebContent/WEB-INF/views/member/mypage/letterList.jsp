@@ -41,7 +41,7 @@
 						<td>${n.number}</td>
 						<c:if test="${n.chk eq 'Y'}">
 							<td class="text-left text-indent"><a
-								href="../member/myletter-detail?number=${n.number}">${n.title}</a></td>
+								href="letter-detail?number=${n.number}">${n.title}</a></td>
 						</c:if>
 						<c:if test="${n.chk eq 'N'}">
 							<td class="text-left text-indent">${n.title}</td>
