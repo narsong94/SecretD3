@@ -24,6 +24,9 @@ public class LoginController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		PrintWriter out = response.getWriter();
@@ -32,24 +35,30 @@ public class LoginController extends HttpServlet {
 		Member member = memberDao.get(id);
 
 		if (member == null) {
+			System.out.println("1");
 			out.println("<script language='javascript'>");
-			out.println("alert('해당되는 아이디가 존재하지 않습니다.');");
+			out.println("alert('해당되는 아이디가 존재하지 않습니다.');history.go(-1);");
 			out.println("</script>");
 			out.flush();
-			response.sendRedirect("login?error=1");
+			response.sendRedirect("login");
 		} else if (!member.getPwd().equals(pwd)) {
+			System.out.println("2");
 			out.println("<script language='javascript'>");
-			out.println("alert('비밀번호가 틀렸습니다. 다시 확인해주세요.');");
+			out.println("alert('비밀번호가 틀렸습니다. 다시 확인해주세요.');history.go(-1);");
 			out.println("</script>");
 			out.flush();
-			response.sendRedirect("login?error=2");
 		} else {
+			System.out.println("3");
 			request.getSession().setAttribute("id", id);
 			String url = request.getParameter("returnURL");
-			if (url != null)
+			if (url != null) {
+				System.out.println("4");
 				response.sendRedirect(url);
-			else
+			}
+			else {
+				System.out.println("5");
 				response.sendRedirect("index");
+			}
 
 		}
 	}

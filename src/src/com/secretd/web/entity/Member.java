@@ -6,19 +6,23 @@ public class Member {
 	private String nickname;
 	private String name;
 	private String email;
+	private String role;
 	/*private boolean docCheck;*/
 	
 	public Member() {
 		
 	}
-	public Member(String id, String pwd, String name, String email, String nickname) {
+	
+	public Member(String id, String pwd, String nickname, String name, String email, String role) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
+		this.nickname = nickname;
 		this.name = name;
 		this.email = email;
-		this.nickname = nickname;
+		this.role = role;
 	}
+
 	public String getId() {
 		return id;
 	}
@@ -49,4 +53,14 @@ public class Member {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	
 }

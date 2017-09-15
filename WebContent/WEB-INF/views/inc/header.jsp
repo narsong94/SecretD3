@@ -67,7 +67,7 @@
 						<li class="none"><c:if test="${ empty sessionScope.id }">
 								<a href="${path}/admin/page">ADMIN</a>
 							</c:if> <c:if test="${ not empty sessionScope.id }">
-								<a href="${path}/admin/notice/list">ADMIN</a>
+								<a href="${path}/admin/page">ADMIN</a>
 							</c:if></li>
 					</ul></li>
 			</ul>

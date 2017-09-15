@@ -19,7 +19,7 @@ import src.com.secretd.web.entity.Member;
 @WebServlet("/admin/page")
 public class PageController extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int result = 0;
 		request.setCharacterEncoding("UTF-8");
@@ -34,15 +34,26 @@ public class PageController extends HttpServlet {
 
 		System.out.println("id : " + id);
 
-		MemberDao mdao = new JdbcMemberDao();
-		 Member m = mdao.get(id); 
+		if (id.equals(""))
+			out.write(
+					"<script>alert('로그인이 필요합니다');location.href='../login';</script>");
+		else {
+			String role = "";
+			MemberDao mdao = new JdbcMemberDao();
+			Member m = mdao.getRole(id);
 
-		if (id == null)
-			out.write("<script>alert('로그인이 필요합니다');location.href='../../login?returnURL=../admin/hospital/list';</script>");
-		else if (session.getAttribute("role").equals("admin")) {
+			String _role = m.getRole();
 
-		} else {
-			out.write("<script>alert('관리자 접근 권한이 없습니다');history.go(-1);self.close();</script>");
+			System.out.println("role : " + role);
+
+			if (_role != null && !_role.equals(""))
+				role = _role;
+			
+			if (!role.equals("admin")) {
+				out.write("<script>alert('관리자 접근 권한이 없습니다');history.go(-1);self.close();</script>");
+			} else {
+				response.sendRedirect("notice/list");
+			}
 		}
 	}
 }

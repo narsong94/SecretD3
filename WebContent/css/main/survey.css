@@ -79,6 +79,102 @@ body, h1, h2 {
 	background: #004080;
 }
 
+/* ------list------------------------------------------------------------ */
+
+.form{
+	width:700px;
+	height:700px;
+	background: #f0f2f5;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#SurveyForm{
+	width: 300px;
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+.btn {
+	display: inline-block;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	padding: 8px 0px;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 18px;
+	width: 420px;
+	background: #54657e;
+}
+
+.btn:hover {
+	text-decoration: none;
+	background: #ff8080;
+	border-color: #ff8080;
+}
+
+.btns{
+	padding: 15px 0px;
+}
+
+.question{
+	font-weight: bold;
+	font-size: 22px;
+	min-width: 500px;
+	padding-bottom: 15px;
+}
+
+.table{
+	padding-top: 15px;
+}
+
+.table tr.select, .table tr.select td{
+	padding-top: 10px;
+}
+.table tr.select td.w70{
+	min-width: 0px;
+}
+/* .table tr.question td.w140{
+	min-width: 100px;
+} */
+
+.text-left{
+	text-align: left;
+}
+/* ----------------------------------------------------------------- */
+
+.form2{
+	width:700px;
+	height:700px;
+	background: #f0f2f5;
+	text-align: center;
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#DiseaseForm{
+	border-top: 1.5px solid black;  
+}
+
+.h2{
+	padding-bottom: 20px;
+}
+
+.hospital{
+	padding-top: 20px;
+}
+
 /* --------------------------------------------------- */
 .footer {
 	text-align: center;

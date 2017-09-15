@@ -1,6 +1,5 @@
 package src.com.secretd.web.dao.jdbc;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,7 +14,7 @@ public class JdbcMemberDao implements MemberDao {
 	@Override
 	public int insert(String id, String pwd, String name, String email, String nickname) {
 		int result = 0;
-		String sql = "INSERT INTO Member(id,pwd, name, email,nickname) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO Member(id,pwd, name, email,nickname,role) VALUES(?,?,?,?,?,member)";
 		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -38,43 +37,49 @@ public class JdbcMemberDao implements MemberDao {
 	}
 
 	@Override
-	 public Member get(String id) {
-	      Member member = null;
-	      
-	      String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-	      String sql = "SELECT * FROM Member WHERE id=?";
-	      
-	      // jdbc 드라이버 로드
-	      try {
-	         Class.forName("com.mysql.jdbc.Driver");
+	public Member get(String id) {
+		Member member = null;
 
-	         // 연결 /인증
-	         Connection con = DriverManager.getConnection(url, "soonface", "2014");
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String sql = "SELECT * FROM Member WHERE id=?";
 
-	         // 실행
-	         PreparedStatement st = con.prepareStatement(sql);
-	         st.setString(1, id);
+		// jdbc 드라이버 로드
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
 
-	         // 결과 가져오기
-	         ResultSet rs = st.executeQuery();
+			// 연결 /인증
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
 
-	         if(rs.next()) {
-	        	 member = new Member(rs.getString("id"), rs.getString("pwd"), rs.getString("name"),
-							rs.getString("email"), rs.getString("nickname"));
-	         }
+			// 실행
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, id);
 
-	         rs.close();
-	         st.close();
-	         con.close();
+			// 결과 가져오기
+			ResultSet rs = st.executeQuery();
 
-	      } catch (ClassNotFoundException e) {
-	         e.printStackTrace();
-	      } catch (SQLException e) {
-	         e.printStackTrace();
-	      }
-	      
-	      return member;
-	   }
+			if (rs.next()) {
+				member = new Member();
+				
+				member.setId(rs.getString("id"));
+				member.setPwd(rs.getString("pwd"));
+				member.setNickname(rs.getString("nickname"));
+				member.setName(rs.getString("name"));
+				member.setEmail(rs.getString("email"));
+				member.setRole(rs.getString("role"));
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return member;
+	}
 
 	@Override
 	public int edit(String id, String pwd) {
@@ -100,7 +105,7 @@ public class JdbcMemberDao implements MemberDao {
 
 	@Override
 	public boolean duplicateIdCheck(String id) {
-		boolean result=false;
+		boolean result = false;
 		String sql = "SELECT * FROM Member WHERE id=?";
 		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 
@@ -111,7 +116,7 @@ public class JdbcMemberDao implements MemberDao {
 			st.setString(1, id);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
-				result=true;		
+				result = true;
 			}
 			System.out.println(result);
 			rs.close();
@@ -178,6 +183,53 @@ public class JdbcMemberDao implements MemberDao {
 			e.printStackTrace();
 		}
 		return pwd;
+	}
+
+	@Override
+	public Member getRole(String id) {
+		Member member = null;
+
+		String url = "jdbc:mysql://211.238.142.247/soonfacedb?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
+		String sql = "SELECT * FROM Member WHERE id=?";
+
+		// jdbc 드라이버 로드
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// 연결 /인증
+			Connection con = DriverManager.getConnection(url, "soonface", "2014");
+
+			// 실행
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, id);
+
+			// 결과 가져오기
+			ResultSet rs = st.executeQuery();
+
+			if (rs.next()) {
+				member = new Member();
+				
+				member.setId(rs.getString("id"));
+				member.setPwd(rs.getString("pwd"));
+				member.setNickname(rs.getString("nickname"));
+				member.setName(rs.getString("name"));
+				member.setEmail(rs.getString("email"));
+				member.setRole(rs.getString("role"));
+				
+				System.out.println(rs.getString("role"));
+			}
+
+			rs.close();
+			st.close();
+			con.close();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return member;
 	}
 
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,7 +40,7 @@
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/counseling/list">Counseling</a>
 							</c:if></li>
-							<li class="none"><c:if test="${ empty sessionScope.id }">
+						<li class="none"><c:if test="${ empty sessionScope.id }">
 								<a href="${path}/guest/hospital/list">Hospital</a>
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/hospital/list">Hospital</a>
@@ -52,9 +52,8 @@
 						<a href="${path}/logout">Logout</a>
 					</c:if></li>
 				<li><c:if test="${ empty sessionScope.id }">
-						<a href="${path}/guest/Join">Join</a>
-					</c:if>
-					<c:if test="${ not empty sessionScope.id }">
+						<a href="${path}/guest/join">Join</a>
+					</c:if> <c:if test="${ not empty sessionScope.id }">
 						<a href="${path}/member/mypage/info">My Page</a>
 					</c:if></li>
 				<li><a>CS Center</a>
@@ -74,11 +73,16 @@
 							</c:if> <c:if test="${ not empty sessionScope.id }">
 								<a href="${path}/member/letter/insert">1:1 문의</a>
 							</c:if></li>
+						<li class="none"><c:if test="${ empty sessionScope.id }">
+								<a href="${path}/admin/page">ADMIN</a>
+							</c:if> <c:if test="${ not empty sessionScope.id }">
+								<a href="${path}/admin/page">ADMIN</a>
+							</c:if></li>
 					</ul></li>
 			</ul>
 		</div>
 	</div>
-</header>
+	</header>
 
 	<main class="main">
 	<div class="main-container">

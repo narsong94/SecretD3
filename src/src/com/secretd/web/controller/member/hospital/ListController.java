@@ -19,20 +19,33 @@ import src.com.secretd.web.entity.Hospital;
 public class ListController extends HttpServlet{
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	int page = 1;
-	String _page = request.getParameter("p");
-	if (_page != null && !_page.equals(""))
-		page = Integer.parseInt(_page);
 	String _query = request.getParameter("name");
-	String query = "";
-	if (_query != null && !_query.equals(""))
-		query = _query;
-	List<Hospital> list = null;
-	int count = 0;
-	
-	HospitalDao hospitalDao = new JdbcHospitalDao();
-	list = hospitalDao.getList(page, query);
-	count = hospitalDao.getCount();
+	   String _page = request.getParameter("p");
+	   String _subject =request.getParameter("sub");
+	   String _addr = request.getParameter("addr");
+	   
+	   String query = "";
+	   String subject="";
+	   String addr="";
+	   int page = 1;
+	   
+	   List<Hospital> list = null;
+	   int count = 0;
+	   
+	   if (_page != null && !_page.equals(""))
+	         page = Integer.parseInt(_page);
+	   if (_query != null && !_query.equals(""))
+	      query = _query;
+	   if (_addr != null && !_addr.equals(""))
+	      addr = _addr;   
+	   if (_subject != null && !_subject.equals(""))
+	      subject = _subject;
+
+	   
+	   HospitalDao hospitalDao = new JdbcHospitalDao();
+	   
+	   list = hospitalDao.getList(query,subject,addr,page);
+	   count = hospitalDao.getCount(query,subject,addr);
 	request.setAttribute("list", list);
 	request.setAttribute("count", count);
 	request.getRequestDispatcher("/WEB-INF/views/member/hospital/list.jsp").forward(request, response);

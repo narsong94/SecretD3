@@ -18,7 +18,7 @@
 
 	<main class="main">
 	<div class="title">
-		<img src="../../images/bg-cscenter.jpg" />
+		<img src="../../images/bg-mypage2.png" />
 	</div>
 
 	<jsp:include page="inc/aside.jsp" />

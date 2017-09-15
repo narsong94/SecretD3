@@ -17,4 +17,6 @@ public interface MemberDao {
 
 	String get(String id, String name, String email);
 
+	Member getRole(String id);
+
 }

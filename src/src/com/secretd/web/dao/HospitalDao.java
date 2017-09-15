@@ -17,5 +17,9 @@ public interface HospitalDao{
 	Hospital get(String h_id);
 
 	int edit(String h_id, String subject, String name, String address, String phone_number);
+	
+	int getCount(String query, String subject, String addr);
+	
+	List<Hospital> getList(String query, String subject, String addr, int page);
 
 }

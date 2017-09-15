@@ -29,7 +29,7 @@
 				<label for="toggle_button${f.number}"
 					class="toggle_button${f.number}">${f.title}</label>
 				<input type="checkbox" id="toggle_button${f.number}">
-				<div id="toggle_contents${f.number}">${f.content}</div>
+				<div id="toggle_contents${f.number}">${f.content}<p><hr/><p>${f.answer}</div>
 			</div>
 			</c:forEach>
 		</div>

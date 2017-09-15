@@ -11,13 +11,16 @@ public class Disease {
 	private Blob picture;
 	private String mangerId;
 	private String category;
-
+	private int countCmt;
+	
 	public Disease() {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public Disease(String number, String classCode, String name, String explanation, Blob picture, String mangerId,
-			String category) {
+			String category, int countCmt) {
 		super();
 		this.number = number;
 		this.classCode = classCode;
@@ -26,7 +29,10 @@ public class Disease {
 		this.picture = picture;
 		this.mangerId = mangerId;
 		this.category = category;
+		this.countCmt = countCmt;
 	}
+
+
 
 	public String getNumber() {
 		return number;
@@ -82,6 +88,18 @@ public class Disease {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+
+
+	public int getCountCmt() {
+		return countCmt;
+	}
+
+
+
+	public void setCountCmt(int countCmt) {
+		this.countCmt = countCmt;
 	}
 	
 	
